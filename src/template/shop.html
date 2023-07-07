@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven | User Login</title>
+    <link rel="stylesheet" href="../assets/css/shop.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="icon" href="../icons/svg/logo.svg">
+</head>
+<body>
+    <div class="container-fluid position-relative">
+
+        <!-- category modal  -->
+        <div class="cate-wrapper p-5">
+            <div class="cate-modal shadow d-flex flex-column align-items-center justify-content-center py-5">
+                <a href="" class="cate-link ">All</a>
+                <a href="" class="cate-link mt-2">All</a>
+                <a href="" class="cate-link mt-2">All</a>
+                <a href="" class="cate-link mt-2">All</a>
+            </div>
+        </div>
+        <!-- end of category modal  -->
+
+        <div class="row">
+            <!-- navbar  -->
+            <div class="col-12 navbar mb-4 mb-md-3">
+                <div class="row navwrapper">
+                    <div class=" col-6 col-md-3 d-flex align-items-center justify-content-start px-4 px-md-5">
+                        <img src="../icons/svg/logotext.svg" alt="">
+                    </div>
+                    <div class="col-0 col-md-6 d-none d-md-block d-flex align-items-center justify-content-center">
+                        <div class="searchbar position-relative">
+                            <span><i class="bi bi-search"></i></span><input type="text" class="shadow">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 d-flex align-items-center justify-content-end px-1 px-md-3">
+                        <button class="categ" name="category">Category</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 d-block d-md-none d-flex align-items-center justify-content-center">
+                <div class="searchbar position-relative">
+                    <span><i class="bi bi-search"></i></span><input type="text" class="shadow">
+                </div>
+            </div>
+            <!-- end of navbar  -->
+
+            <!-- sub nav  -->
+            <div class="col-12 sub-nav border-bottom px-4 px-md-5">
+                <div class="row ">
+                    <div class="col-6 d-flex align-items-center justify-content-start">
+                        <h4 class="pt-3 pt-md-2">Product</h4>
+                    </div>
+                    <div class="col-6 d-flex align-items-center justify-content-end" >
+                        <a href="" class="profile"><i class="bi bi-person-circle "></i></a>
+                        <a href="" class="heart mx-3"><i class="bi bi-heart "></i></a>
+                        <a href="" class="shopping-cart"><i class="bi bi-cart "></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- end of sub nav  -->
+
+            <!-- product  -->
+            <div class="col-12 products px-3 px-md-5">
+
+                <!-- product  wrapper -->
+                <div class="row products-wrapper align-items-center">
+
+                    <!-- product items -->
+                    <div class="col-6 col-md-3 col-lg-2 p-3 text-center item">
+                        <a href="#" class="d-flex align-items-center justify-content-center">
+                            <div class="image shadow" style="background: url(../books/TheGene.jpg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;"></div>
+                        </a>
+                        <!-- <div class="mt-2"></div> -->
+                        <a href="" class="name px-lg-3 px-1">The Grene</a>
+                        <div class="foot w-100 d-flex align-items-center justify-content-between px-lg-5 px-2">
+                            <a href="#" class="price">$50</a>
+                            <div class="btn-gp d-flex align-items-center justify-content-center mb-2">
+                                <a href="#" class="me-1 wishlist"><i class="bi bi-heart"></i><i class="bi bi-heart-fill text-danger d-none"></i></a>
+                                <a href="#" class="cart mb-1"><i class="bi bi-cart"></i><i class="bi bi-cart-fill text-warning d-none"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+
+                    
+                </div>
+
+                <div class="mb-5"></div>
+
+            </div>
+            <!-- end of product  -->
+
+        </div>
+    </div>
+    <script src="../assets/js/item.js"></script>
+</body>
+</html>
