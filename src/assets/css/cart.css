@@ -31,9 +31,9 @@
 .container-fluid{
     width: 100%;
     height: 100vh;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     overflow: hidden;
     position: relative;
     background: url(../../icons/bgcurve2.svg);
@@ -60,10 +60,82 @@
 
 /* shopping cart item  */
 
+/* item  */
+.item-wrapper{
+    width: 390px;
+    height: 75vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* cursor:all-scroll; */
+}
+.item-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.itembox{
+    width: 100%;
+    height: auto;
+    /* background: var(--gradient-blue); */
+}
+.itembox .img-box{
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    border: none;
+}
+.itembox h3{
+    font-family: var(--Gochi);
+    font-size: 28px;
+    position: relative;
+    font-weight: 500;
+    color: var(--azul);
+    z-index: 999;
+}
+.itembox h3::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background: url(../../icons/underline.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    width: 80px;
+    height: 15px;
+}
+.itembox small{
+    font-family: var(--Gochi);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--violet);
+}
+.itembox span{
+    font-family: var(--Gochi);
+    font-weight: 500;
+    color: var(--placeholder);
+    font-size: 24px;
+}
+.itembox span .price{
+    color: var(--black);
+}
+.itembox .select{
+    font-family: var(--Gluten);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--placeholder);
+}
+.itembox .select.active{
+    color: green;
+}
+.itembox .bi-trash{
+    font-size: 22px;
+    color: var(--red);
+}
 
 .count{
-    width: 130px;
-    height: 35px;
+    width: 100px;
+    padding: 0 1rem;
+    height: 30px;
     background: var(--input);
     display: flex;
     align-items: center;
@@ -88,8 +160,66 @@
     cursor: pointer;
 }
 .count .number{
-    background: var(--black);
+    background: var(--honeydew);
     padding: 3px 15px;
     border-radius: 10px;
-    color:#fff;
+    color:var(--oxford-blue);
 }
+/* item  */
+
+/* footer  */
+.footer{
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 0;
+    transform: translateY(100%);
+    transition: all .4s ease-in-out;
+}
+.footer-wrapper{
+    width: 400px;
+    height: 100%;
+    background: var(--oxford-blue);
+    border-radius: 20px;
+
+}
+.footer-wrapper .shop{
+    border: none;
+    background: none;
+    width: auto;
+    font-size: 28px;
+    font-family: var(--Gochi);
+    color: var(--yellow);
+    border: none;
+    background: none;
+    z-index: 999;
+    position: relative;
+}
+.footer-wrapper .shop::before{
+    content: "";
+    width: 80%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    z-index: -1;
+    background: url(../../icons/paint.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.footer-wrapper .shop:hover{
+    transform: scale(1.05);
+}
+
+.footer-wrapper .footer_item_price h6{
+    font-family: var(--Gochi);
+    font-size: 22px;
+    padding-top: 1rem;
+}
+/* footer  */

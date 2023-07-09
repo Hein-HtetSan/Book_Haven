@@ -13,7 +13,8 @@ categoryBtn.onclick = () => {
 }
 
 category_links.forEach(e => {
-    e.onclick = () => {
+    e.onclick = (event) => {
+        event.preventDefault();
         categoryFrame.style.transform = "translateY(-100%)";
     }
 })
