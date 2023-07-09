@@ -154,12 +154,12 @@
     color: var(--azul);
     font-size: 28px;
 }
-.profile, .heart, .shopping-cart{
+.profile, .heart, .shopping-cart, .truck    {
     font-size: 22px;
     color: var(--placeholder);
     text-decoration: none;
 }
-.profile:hover, .heart:hover, .shopping-cart:hover{
+.profile:hover, .heart:hover, .shopping-cart:hover, .truck:hover{
     color: var(--black);
 }
 /* end of sub nav  */
@@ -230,7 +230,10 @@
     display: flex;
     align-items: start;
     justify-content: center;
-    z-index: 999;
+    z-index: 9999999;
+    background: var(--gradient-blue);
+    transform: translateY(-100%);
+    transition: all .5s ease-in-out;
 }
 .cate-modal{
     width: 300px;
@@ -239,4 +242,13 @@
     border: 1px solid var(--input);
     background: var(--oxford-blue);
     border-radius: 10px;
+}
+.cate-modal a{
+    text-decoration: none;
+    font-family: var(--Gochi);
+    font-size: 22px;
+    color: var(--input);
+}
+.cate-modal a:hover{
+    color: var(--red);
 }
