@@ -14,9 +14,9 @@ choose.forEach(e => {
         setTimeout(() => {
             if(e.classList.contains("user")){
                 console.log("user")
-                window.location = "../template/user_login.html";
+                window.location = "../template/user_login.php";
             }else if(e.classList.contains("admin")){
-                window.location = "../admin/admin_login.html";
+                window.location = "../admin/admin_login.php";
                 console.log("admin")
             }
         }, 3000)

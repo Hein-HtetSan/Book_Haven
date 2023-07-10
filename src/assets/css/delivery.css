@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&family=Gochi+Hand&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -29,8 +29,11 @@
 
 .container-fluid{
     width: 100%;
-    height: auto;
-    /* overflow: hidden; */
+    height: 100vh;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    overflow: hidden;
     position: relative;
     background: url(../../icons/bgcurve2.svg);
     background-position: center;
@@ -54,30 +57,29 @@
     color: var(--azul);
 }
 
-/* product image  */
-.product-image{
+/* item  */
+.item-wrapper{
     width: 100%;
-    height: 84vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 75vh;
     overflow: hidden;
+    overflow-y: scroll;
+    /* cursor:all-scroll; */
 }
-/* end of product image  */
-
-
-/* product details  */
-.product-details{
+.item-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.itembox{
     width: 100%;
-    height: 84vh;
+    height: auto;
+    /* background: var(--gradient-blue); */
 }
-.content-wrapper .instock{
-    font-family: var(--Gochi);
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--violet);
+.itembox .img-box{
+    width: 150px;
+    height: 250px;
+    border-radius: 10px;
+    border: none;
 }
-.content-wrapper h3{
+.itembox h3{
     font-family: var(--Gochi);
     font-size: 28px;
     position: relative;
@@ -85,7 +87,7 @@
     color: var(--azul);
     z-index: 999;
 }
-.content-wrapper h3::before{
+.itembox h3::before{
     content: "";
     position: absolute;
     left: 0;
@@ -95,85 +97,56 @@
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-    width: 100px;
-    height: 20px;
+    width: 80px;
+    height: 15px;
 }
-.content-wrapper .category-name,.content-wrapper .author-name {
+.itembox small{
     font-family: var(--Gochi);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--violet);
+}
+.itembox span{
+    font-family: var(--Gochi);
+    font-weight: 500;
+    color: var(--placeholder);
     font-size: 18px;
-    font-weight: 500;
-    color: var(--placeholder);
 }
-.content-wrapper .category-name span{
-    color: var(--violet);
-}
-.content-wrapper .author-name span{
+.itembox span .price{
+    /* width: 80px; */
     color: var(--black);
 }
-.content-wrapper .price{
+
+.itembox .info{
     font-family: var(--Gochi);
-    font-size: 26px;
-    font-weight: 500;
-    color: var(--placeholder);
-}
-.content-wrapper .price span{
-    color: var(--azul);
-}
-.content-wrapper .summary{
-    font-size: 22px;
-    font-weight: 500;
-    font-family: var(--Gochi);
-    color: var(--black);
-}
-.content-wrapper .quantity{
-    font-family: var(--Gochi);
-    font-weight: 500;
     font-size: 20px;
-    color: var(--violet);
-}
-
-.btn-gp .wishlist, .btn-gp .cart{
-    font-size: 20px;
-    text-decoration: none;
-    color: var(--placeholder);
-    font-family: var(--Gochi);
     font-weight: 500;
-    color: var(--placeholder);
+    color: var(--input);
 }
 
-.btn-gp .cart{
-    font-size: 23px;
-}
-
-.btn-gp > .wishlist:hover, .cart:hover{
-    color: var(--black);
-}
-
-.content-wrapper .back{
-    text-decoration: none;
+.back{
     font-family: var(--Gochi);
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 24px;
     color: var(--placeholder);
+    text-decoration: none;
 }
-.content-wrapper .back:hover{
+.back:hover{
     color: var(--red);
 }
-/* end of product details  */
 
+ /* item box  */
 
-.footer{
+ .status{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-}
-
-
-@media screen and (max-width: 420px) {
-    .product-image{
-        height: 40vh;
-        justify-content: center;
-        align-items: end;
-    }
-    .product-details{
-        height: 80vh;
-    }
-}
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--Gochi);
+    font-size: 32px;
+    color: var(--placeholder);
+    text-align: center;
+ }

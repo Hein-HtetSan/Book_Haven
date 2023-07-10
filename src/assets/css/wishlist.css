@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
 
 *{
     padding: 0;
@@ -24,8 +23,8 @@
     --light-red: #FED7D7;
 
     /* font family  */
-    --Gluten:  'Gluten', sans-serif;
-    --Gochi:  'Gochi Hand', sans-serif;
+    --Gluten:  'Open Sans', sans-serif;
+    --Gochi:  'Open Sans', sans-serif;
 }
 
 .container-fluid{
@@ -144,7 +143,22 @@
     text-decoration: none;
 }
 .back:hover{
-    color: var(--black);
+    color: var(--red);
 }
 
  /* item box  */
+
+ .status{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--Gochi);
+    font-size: 32px;
+    color: var(--placeholder);
+    text-align: center;
+ }

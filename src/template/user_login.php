@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Haven | User Login</title>
-    <link rel="stylesheet" href="../assets/css/signup.css">
+    <link rel="stylesheet" href="../assets/css/login2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
@@ -18,20 +18,8 @@
                         <img src="../icons/svg/logo.svg" alt="">
                     </div>
                     <div class="title text-center mb-5">
-                        <h3>Sign up</h3>
+                        <h3>Login</h3>
                     </div>
-                    
-                        <div class="row name-container px-4 mb-3">
-                            <div class="col-6 input-container position-relative">
-                                <input type="text" name="fname" id="" class="field shadow" required>
-                                <small class="label">First</small>
-                            </div>
-                            <div class="col-6 input-container position-relative">
-                                <input type="text" name="lname" id="" class="field shadow" required>
-                                <small class="label">Last</small>
-                            </div> 
-                        </div>
-                    
                     <div class="input-container position-relative mb-4">
                         <input type="email" name="email" id="" class="field shadow" required>
                         <small class="label">Email</small>
@@ -44,16 +32,12 @@
                         <input type="password" name="email" id="" class="field shadow" required>
                         <small class="label">Password</small>
                     </div>
-                    <div class="input-container position-relative mb-3">
-                        <input type="number" name="phone" id="" class="field shadow" required>
-                        <small class="label">Phone number</small>
-                    </div>
-                    <div class="btn-gp mb-3">
+                    <div class="btn-gp mt-3 mb-3">
                         <a href="../index.html">Back</a>
-                        <button class="sign-in" name="signup">Sign up</button>
+                        <button class="sign-in" name="signin">Sign in</button>
                     </div>
                     <div class="form-footer border-top">
-                        <p>Already have an account!<br><a href="./user_login.html">Sign in</a></p>
+                        <p>Are you new to here!<br><a href="./user_signup.php">Register</a></p>
                     </div>
                 </form>
             </div>
