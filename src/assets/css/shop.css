@@ -155,12 +155,38 @@
     font-size: 28px;
 }
 .profile, .heart, .shopping-cart, .truck    {
-    font-size: 22px;
+    font-size: 17px;
     color: var(--placeholder);
     text-decoration: none;
 }
 .profile:hover, .heart:hover, .shopping-cart:hover, .truck:hover{
     color: var(--black);
+}
+
+.listbtn{
+    border: none;
+    border-radius: 10px;
+    font-size: 26px;
+    color: var(--azul);
+    background: none;
+    cursor: pointer;
+}
+.link-list{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 150px;
+    height: 0px;
+    background: var(--input);
+    border-radius: 15px;
+    transition: height .4s ease-in-out;
+    z-index: 9999;
+    overflow: hidden;
+    display: none;
+}
+.link-list.active{
+    display: block;
+    height: 160px;
 }
 /* end of sub nav  */
 

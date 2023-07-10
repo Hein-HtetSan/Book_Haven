@@ -7,6 +7,13 @@ const cartFill = document.querySelector(".added-cart");
 const categoryBtn = document.querySelector(".categ");
 const categoryFrame = document.querySelector(".cate-wrapper");
 const category_links = document.querySelectorAll(".cate-modal a");
+const listBtn = document.querySelector(".listbtn");
+const linkLists = document.querySelector(".link-list");
+
+
+listBtn.addEventListener("click", () => {
+    linkLists.classList.toggle("active");
+})
 
 categoryBtn.onclick = () => {
     categoryFrame.style.transform = "translateY(0)";

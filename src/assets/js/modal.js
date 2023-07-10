@@ -16,7 +16,7 @@ choose.forEach(e => {
                 console.log("user")
                 window.location = "../template/user_login.html";
             }else if(e.classList.contains("admin")){
-                window.location = "../template/admin_login.html";
+                window.location = "../admin/admin_login.html";
                 console.log("admin")
             }
         }, 3000)
