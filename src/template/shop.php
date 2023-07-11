@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +65,7 @@
                         <button class="listbtn"><i class="bi bi-list"></i></button>
                         <div class="d-flex px-3 flex-column align-items-start shadow justify-content-center link-list">
                             <a href="./profile.html" class="profile d-flex me-3 mb-2"><i class="bi bi-person-circle me-2"></i> Profile</a>
-                            <a href="./wishlist.html" class="heart d-flex me-3 mb-2"><i class="bi bi-heart-fill me-2"></i> Wishlist</a>
+                            <a href="./wishlist.php?id=" class="heart d-flex me-3 mb-2"><i class="bi bi-heart-fill me-2"></i> Wishlist</a>
                             <a href="./cart.html" class="shopping-cart d-flex me-3 mb-2"><i class="bi bi-cart-fill me-2"></i> Cart</a>
                             <a href="./delivery.html" class="truck d-flex"><i class="bi bi-box me-2"></i> Delivery</a>
                         </div>
@@ -77,27 +81,8 @@
                 <div class="row products-wrapper align-items-center">
 
                     <!-- product items -->
-                    <div class="col-6 col-md-3 col-lg-2 p-3 text-center item">
-                        <a href="./product_detail.html" class="d-flex align-items-center justify-content-center">
-                            <div class="image shadow" style="background: url(../books/TheGene.jpg);
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;"></div>
-                        </a>
-                        <!-- <div class="mt-2"></div> -->
-                        <a href="" class="name px-lg-3 px-1">The Grene</a>
-                        <div class="foot w-100 d-flex align-items-center justify-content-between px-lg-4 px-2">
-                            <a href="#" class="price">$50</a>
-                            <div class="btn-gp d-flex align-items-center justify-content-center mb-2">
-                                <a href="#" class="me-1 wishlist"><i class="bi bi-heart add-wishlist"></i><i class="bi bi-heart-fill text-danger d-none added-wishlist"></i></a>
-                                <a href="#" class="cart mb-1"><i class="bi bi-cart add-cart"></i><i class="bi bi-cart-fill text-warning d-none added-cart"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- end of product item  -->
                     
-                    
-
-
                     
                 </div>
 
@@ -109,5 +94,7 @@
         </div>
     </div>
     <script src="../assets/js/shop.js"></script>
+    <script src="../assets/js/items.js"></script>
+    
 </body>
 </html>

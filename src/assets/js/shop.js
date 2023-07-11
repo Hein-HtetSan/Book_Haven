@@ -1,5 +1,4 @@
-const wishListBtn = document.querySelector(".item .wishlist");
-const cartBtn = document.querySelector(".item .cart");
+
 const heart = document.querySelector(".add-wishlist");
 const heartFill = document.querySelector(".added-wishlist");
 const cart = document.querySelector(".add-cart");
@@ -10,6 +9,7 @@ const category_links = document.querySelectorAll(".cate-modal a");
 const listBtn = document.querySelector(".listbtn");
 const linkLists = document.querySelector(".link-list");
 const linkLists_links = document.querySelectorAll(".link-list a");
+
 
 
 listBtn.addEventListener("click", () => {
@@ -34,12 +34,4 @@ category_links.forEach(e => {
     }
 })
 
-wishListBtn.onclick = () => {
-    heart.classList.toggle("d-none");
-    heartFill.classList.toggle("d-none");
-}
 
-cartBtn.onclick = () => {
-    cart.classList.toggle("d-none");
-    cartFill.classList.toggle("d-none");
-}
