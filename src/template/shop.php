@@ -66,7 +66,7 @@
                         <div class="d-flex px-3 flex-column align-items-start shadow justify-content-center link-list">
                             <a href="./profile.html" class="profile d-flex me-3 mb-2"><i class="bi bi-person-circle me-2"></i> Profile</a>
                             <a href="./wishlist.php?id=" class="heart d-flex me-3 mb-2"><i class="bi bi-heart-fill me-2"></i> Wishlist</a>
-                            <a href="./cart.html" class="shopping-cart d-flex me-3 mb-2"><i class="bi bi-cart-fill me-2"></i> Cart</a>
+                            <a href="./cart.php?id=" class="shopping-cart d-flex me-3 mb-2"><i class="bi bi-cart-fill me-2"></i> Cart</a>
                             <a href="./delivery.html" class="truck d-flex"><i class="bi bi-box me-2"></i> Delivery</a>
                         </div>
                     </div>

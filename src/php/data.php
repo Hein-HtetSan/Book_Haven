@@ -16,11 +16,9 @@
         $id = $row['id'];
         
 
-        
-
         $output .= "
         <div class='col-6 col-md-3 col-lg-2 p-3 text-center item'>
-            <a href='./product_detail.html' class='d-flex align-items-center justify-content-center'>
+            <a href='./product_detail.php?id=$id' class='d-flex align-items-center justify-content-center'>
                 <div class='image shadow' style='background: url(../books/$img);
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -35,7 +33,7 @@
                         <i class='bi bi-heart add-wishlist $heart'></i>
                         <i class='bi bi-heart-fill text-danger added-wishlist $heart_fill'></i>
                     </a>
-                    <a href='#' class='cart mb-1'><i class='bi bi-cart add-cart'></i><i class='bi bi-cart-fill text-warning d-none added-cart' ></i></a>
+                    <a href='../php/cart.php?id=$id' class='cart mb-1'><i class='bi bi-cart add-cart'></i><i class='bi bi-cart-fill text-warning d-none added-cart' ></i></a>
                 </div>
             </div>
         </div>

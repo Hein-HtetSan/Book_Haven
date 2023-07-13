@@ -11,7 +11,7 @@
         $append = "INSERT INTO wishlist (book_id) VALUES ($book_id)";
             $append_query = mysqli_query($con, $append);
             if($append_query){
-                header("location:../template/shop.php");
+                header("location:../template/wishlist.php");
             }
     }else{
         while($row = mysqli_fetch_assoc($fetch_query)){
@@ -23,15 +23,17 @@
             $remove = "DELETE FROM wishlist WHERE book_id = $book_id";
             $remove_query = mysqli_query($con, $remove);
             if($remove_query){
-                header("location: ../template/shop.php");
+                header("location: ../template/wishlist.php");
             }
         }else{
             $append = "INSERT INTO wishlist (book_id) VALUES ($book_id)";
             $append_query = mysqli_query($con, $append);
             if($append_query){
-                header("location: ../template/shop.php");
+                header("location: ../template/wishlist.php");
             }
         }
         $is_include = false;
     }
+
+
 ?>

@@ -2,8 +2,8 @@
 
     include_once("./php/config.php");
     $text = "
-    The book discusses the power of genetics in determining peoples well-being and traits. It delves into the personal genetic history of Siddhartha Mukherjees family, including mental illness.
+    What is Spare about? Spare (2023) is Prince Harrys highly anticipated memoir, which offers unprecedented insight into life as a royal. With remarkable candor, Harry reflects on his mothers death, his complex relationships with other family members, and his battles with the press.
     ";
-    mysqli_query($con, "UPDATE book set description = '$text' where id = 1");
+    mysqli_query($con, "UPDATE book set description = '$text' where id = 4");
 
 ?>
