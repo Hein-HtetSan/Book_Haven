@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
-
+<style>
+    .footer-wrapper{
+        width: 500px;
+        font-size: 20px;
+    }
+    .shop{
+        text-decoration: none;
+        font-weight: 600px;
+    }
+</style>
 <body>
     
     <div class="container-fluid">
@@ -111,11 +120,11 @@
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center footer py-4">
                 <div class="footer-wrapper px-5 py-5 d-flex align-items-center justify-content-between">
-                    <div class="footer_item_price d-flex flex-column flex-md-row align-items-start justify-content-center text-center text-light py-3">
+                    <div class="footer_item_price d-flex flex-column flex-md-row align-items-start justify-content-center text-center text-light py-4">
                         <h6 class="me-md-3 me-0">Items : <span>1</span></h6> 
                         <h6>Prices : $<span>50</span></h6>
                     </div>
-                    <a href="" class="shop">Shop</a>
+                    <a href="" class="shop">Buy Now</a>
                 </div>
             </div>
         </div>
