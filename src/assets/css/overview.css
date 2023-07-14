@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* color  */
+    --oxford-blue: #011638ff;
+    --silver: #cdcdcdff;
+    --honeydew: #dff8ebff;
+    --azul: #016fb9ff;
+    --yellow: #F9C54A ;
+    --gradient-blue: rgba(9,115 ,242 , 0.3);
+    --violet:#BC5BF8;
+    --placeholder :  #999;
+    --black: #333;
+    --input: #efefef;
+    --red : #FD3B3B;
+    --light-red: #FED7D7;
+
+    /* font family  */
+    --Gluten:  'Open Sans', sans-serif;
+    --Gochi:  'Open Sans', sans-serif;
+}
+
+
+.container-fluid{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url(../../icons/bgcurve2.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+
+/* navbar  */
+.navbar{
+    width: 100%;
+    height: 17vh;
+    /* background: green; */
+}
+.navbar h4{
+    font-size: 24px;
+    color: var(--azul);
+}
+/* navbar  */
+
+
+/* aside 
+ */
+.aside{
+    width: 100%;
+    height: 83vh;
+    /* background-color: #BC5BF8; */
+}
+.aside-wrapper .span, .aside-wrapper span .span2{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    cursor: pointer;
+}
+.span.active, span .span2.active{
+    color: var(--azul);
+}
+/* aside  */
+
+/* main  */
+.main{
+    width: 100%;
+    height: 83vh;
+    background: red;
+}
+/* main  */
+
+@media screen and (max-width: 767px){
+    .navbar{
+        height: 15vh;
+    }
+    .aside{
+        height: 10vh;
+    }
+    .main{
+        height: 75vh;
+    }
+}
+
+
