@@ -16,6 +16,47 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 px-3 login-container">
+
+            <?php
+
+                include_once("../php/config.php");
+                // session_start();
+                $err = "d-none";
+
+                if(isset($_POST['signup'])){
+                    $duplicate = false;
+                    $fname = $_POST['fname'];
+                    $lname = $_POST['lname'];
+                    $email = $_POST['email'];
+                    $password = $_POST['password'];
+                    $phone = $_POST['phone'];
+                    $img = "user.jpg";
+                    if(!empty($email) || !empty($password) || !empty($phone)){
+                        $fetch = "SELECT email FROM user";
+                        $fetch_query = mysqli_query($con, $fetch);
+                        while($row = mysqli_fetch_assoc($fetch_query)){
+                            if($email == $row['email']){
+                                $duplicate = true;
+                            }
+                        }
+                        if(!$duplicate){
+                            $err = "d-none";
+                            $id = rand(0, 100000);
+                            $sql = "INSERT INTO user VALUES ($id, '$fname', '$lname', '$email', '$password', '$img', '$phone')";
+                            $query = mysqli_query($con, $sql);
+                            if($query){
+                                $_SESSION['usr_id'] = $id;
+                                header("location:./shop.php");
+                            }
+                        }else{
+                            $err = "d-block";
+                        }
+                    }
+                }
+            
+            ?>
+
+
                 <form action="" method="POST" enctype="multipart/form-data" class=" d-flex align-items-center justify-content-center flex-column">
                     <div class="logo mb-3">
                         <img src="../icons/svg/logo.svg" alt="">
@@ -56,9 +97,11 @@
                         <button class="sign-in" type="submit" name="signup">Sign up</button>
                     </div>
                     <div class="form-footer border-top">
-                        <p>Already have an account!<br><a href="./user_login.html">Sign in</a></p>
+                        <p>Already have an account!<br><a href="./user_login.php">Sign in</a></p>
                     </div>
+                    <small class="<?php echo $err; ?> text-warning">Email was already taken!</small>
                 </form>
+                
             </div>
         </div>
     </div>

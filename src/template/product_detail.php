@@ -62,7 +62,7 @@
                                             <div class='quantity-wrapper d-flex align-items-center justify-content-start mt-2'>
                                                 <div class='btn-gp d-flex align-items-center justify-content-center '>
                                                     <a href='../php/wishlist.php?id=$id' class='me-1 wishlist me-3'><i class='bi bi-heart'></i> Wishlist</a>
-                                                    <a href='#' class='cart '><i class='bi bi-cart'></i> Cart</a>
+                                                    <a href='../php/cart.php?id=$id' class='cart '><i class='bi bi-cart'></i> Cart</a>
                                                 </div>
                                             </div>
                                         </div>
