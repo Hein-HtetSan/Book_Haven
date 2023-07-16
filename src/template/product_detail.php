@@ -58,14 +58,6 @@
                                         <p class='summary'>
                                             $descp
                                         </p>
-                                        <div class='d-flex align-items-start justify-content-start mt-2 flex-column mb-5'>
-                                            <div class='quantity-wrapper d-flex align-items-center justify-content-start mt-2'>
-                                                <div class='btn-gp d-flex align-items-center justify-content-center '>
-                                                    <a href='../php/wishlist.php?id=$id' class='me-1 wishlist me-3'><i class='bi bi-heart'></i> Wishlist</a>
-                                                    <a href='../php/cart.php?id=$id' class='cart '><i class='bi bi-cart'></i> Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class='d-flex align-items-center justify-content-end footer px-5'>
                                             <a href='./shop.php' class='back'>Back</a>
                                         </div>

@@ -1,6 +1,8 @@
+<?php
+    session_start();
+    $user_id = $_GET['id'];
 
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +50,7 @@
                     $arr = [];
                     $i= 0;
                     include_once('../php/config.php');
-                    $sql = "SELECT * FROM wishlist";
+                    $sql = "SELECT * FROM wishlist WHERE user_id = $user_id";
                     $query = mysqli_query($con, $sql);
                     if(mysqli_num_rows($query) != 0){
                         $status = "d-none";
@@ -58,7 +60,7 @@
                         }
                         for($j=0; $j<count($arr); $j++){
                             // echo $arr[$j];
-                            $fetch_book = mysqli_query($con, "SELECT * FROM book WHERE id = $arr[$j]");
+                            $fetch_book = mysqli_query($con, "SELECT * FROM book LEFT JOIN wishlist ON book.id = wishlist.book_id WHERE id = $arr[$j] && user_id=$user_id");
                             $row2 = mysqli_fetch_assoc($fetch_book);
                             $title = $row2['title'];
                             $price = $row2['price'];
@@ -77,7 +79,7 @@
                                     <a href='./product_detail.php?id=$id' class='btn btn-sm btn-warning info '>Book Info</a>
                                     <div class='btn-gp d-flex align-items-center justify-content-start mt-2'>
                                         <a href='' class='me-3 cart' id='addcart'><i class='bi bi-cart-fill '></i></a>
-                                        <a href='../php/wishlist2.php?id=$id' class=' mt-1'><i class='bi bi-trash'></i></a>
+                                        <a href='../php/wishlist2.php?id=$id&usr_id=$user_id' class=' mt-1'><i class='bi bi-trash'></i></a>
                                     </div>
                                 </div>
                             </div>

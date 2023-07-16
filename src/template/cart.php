@@ -53,12 +53,15 @@
                         }
                         for($j=0; $j<count($arr); $j++){
                             // echo $arr[$j];
-                            $fetch_book = mysqli_query($con, "SELECT * FROM book WHERE id = $arr[$j]");
+                            $fetch_book = mysqli_query($con, "SELECT * FROM book LEFT JOIN cart ON book.id=cart.bookid WHERE id = $arr[$j]");
                             $row2 = mysqli_fetch_assoc($fetch_book);
                             $title = $row2['title'];
                             $price = $row2['price'];
                             $img = $row2['cover_img'];
                             $id = $row2['id'];
+                            $count = $row2['count'];
+                            $cart_id = $row2['cat_id'];
+                            $usr_id = $row2['user_id'];
                             // $count = $row2['count'];
 
                             echo "
@@ -72,12 +75,12 @@
                                     <span class='border-bottom mb-3 text-sm text-start'>Price : <span class='price'>$$price</span></span>
                                     <!-- <small class='mb-2 '>Quantity</small> -->
                                     <div class='count position-relative shadow mb-3 text-start'>
-                                        <a href='' class='minus'>-</a>
-                                        <span class='number shadow'>1</span>
+                                        <a href='../php/minus.php?id=$id' class='minus'>-</a>
+                                        <span class='number shadow'>$count</span>
                                         <a href='../php/add.php?id=$id' class='add'>+</a>
                                     </div>
                                     <div class='btn-gp d-flex align-items-center justify-content-start mt-2 text-start'>
-                                        <a href='' class='me-3 select ' id='select'>Select</a>
+                                        <a href='../php/order.php?cart_id=$cart_id&price=$price&usr_id=$usr_id' class='me-3 select' id='select'>Select</a>
                                         <a href='../php/cart2.php?id=$id' class='mb-2'><i class='bi bi-trash'></i></a>
                                     </div>
                                 </div>
@@ -95,10 +98,6 @@
                     <!-- item  -->
                     
                     <!-- item  -->
-
-                    
-
-                    
                      
                     <div class="status d-flex align-items-center <?php echo $status;?>">
                         <p>Blank Cart!<br>Please make some choice!</p>
@@ -117,8 +116,25 @@
             </div>
         </div>
 
+        <?php
+        
+            include_once("../php/config.php");
+            $status= "d-none";
+            $transform = "translateY(100%)";
+            $sql3 = "SELECT * FROM orderitem LEFT JOIN cart ON orderitem.cart_id=cart.cat_id";
+            $query3 = mysqli_query($con, $sql3);
+            if(mysqli_num_rows($query3) != 0){
+                $status = "d-block";
+                $transform = "translateY(0%)";
+            }else{
+                $status = "d-none";
+                $transform = "translateY(100%)";
+            }
+        
+        ?>
+
         <div class="row">
-            <div class="col-12 d-flex align-items-center justify-content-center footer py-4">
+            <div class="col-12 d-flex align-items-center justify-content-center footer <?php echo $status; ?> py-4" style="transform: <?php echo $transform;?>">
                 <div class="footer-wrapper px-5 py-5 d-flex align-items-center justify-content-between">
                     <div class="footer_item_price d-flex flex-column flex-md-row align-items-start justify-content-center text-center text-light py-4">
                         <h6 class="me-md-3 me-0">Items : <span>1</span></h6> 
@@ -132,6 +148,6 @@
 
     </div>
 
-    <script src="../assets/js/cart.js"></script>
+    <!-- <script src="../assets/js/cart.js"></script> -->
 </body>
 </html>

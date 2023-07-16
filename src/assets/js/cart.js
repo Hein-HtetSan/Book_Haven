@@ -8,7 +8,7 @@ lnks.forEach(e => {
     // Add an event listener to handle the click event
     e.addEventListener("click", (event) => {
         // Prevent the default behavior of the link
-        event.preventDefault();
+        // event.preventDefault();
         if(e.classList.contains("active")){
             e.classList.remove("active");
             tracker--;

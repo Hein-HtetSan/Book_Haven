@@ -17,9 +17,9 @@
         $id = $row['id'];
         $w_id = $row['book_id'];
         $c_id = $row['bookid'];
-        // echo $w_id;
 
-        if($w_id != null){
+
+        if($w_id != null || $w_id == $user_id){
             $heart = "d-none";
             $heart_fill = "d-block";
         }else{
@@ -50,11 +50,11 @@
                 <div class='foot w-100 d-flex align-items-center justify-content-between px-lg-4 px-2'>
                     <a href='#' class='price'>$$price</a>
                 <div class='btn-gp d-flex align-items-center justify-content-center mb-2'>
-                    <a href='../php/wishlist.php?id=$id' class='me-1 wishlist'>
+                    <a href='../php/wishlist.php?id=$id&usr_id=$user_id' class='me-1 wishlist'>
                         <i class='bi bi-heart add-wishlist $heart'></i>
                         <i class='bi bi-heart-fill text-danger added-wishlist $heart_fill'></i>
                     </a>
-                    <a href='../php/cart.php?id=$id' class='cart mb-1'>
+                    <a href='../php/cart.php?id=$id&usr_id=$user_id' class='cart mb-1'>
                         <i class='bi bi-cart $cart'></i>
                         <i class='bi bi-cart-fill text-warning  $cart_fill' ></i>
                     </a>

@@ -2,9 +2,10 @@
 
     include_once("config.php");
     $book_id = $_GET['id'];
+    $user_id = $_GET['usr_id'];
     $is_include = false;
 
-    $fetch = "SELECT * FROM wishlist";
+    $fetch = "SELECT * FROM wishlist WHERE user_id=$user_id";
     $fetch_query = mysqli_query($con, $fetch);
 
     if(mysqli_num_rows($fetch_query) == 0){
@@ -20,7 +21,7 @@
             }
         }
         if($is_include){
-            $remove = "DELETE FROM wishlist WHERE book_id = $book_id";
+            $remove = "DELETE FROM wishlist WHERE book_id = $book_id and user_id=$user_id";
             $remove_query = mysqli_query($con, $remove);
             if($remove_query){
                 header("location: ../template/wishlist.php");
