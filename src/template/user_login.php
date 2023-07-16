@@ -1,3 +1,32 @@
+<?php
+            
+    include_once("../php/config.php");
+    session_start();
+    $err = "d-none";
+    if(isset($_POST['signin'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM user";
+        $query = mysqli_query($con, $sql);
+        if(!empty($email) || !empty($password)){
+            if(mysqli_num_rows($query) > 0){
+                while($row = mysqli_fetch_assoc($query)){
+                    if($email == $row['email'] && $password == $row['password']){
+                        $err = "d-none";
+                        $_SESSION['usr_id'] = $row['id'];
+                        header("Location:./shop.php");
+                    }else{
+                        $err = "d-block";
+                    }
+                }
+            }
+        }
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,35 +42,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 px-3 login-container">
-
-            <?php
-            
-                include_once("../php/config.php");
-                $err = "d-none";
-                if(isset($_POST['signin'])){
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-
-                    $sql = "SELECT * FROM user";
-                    $query = mysqli_query($con, $sql);
-                    if(!empty($email) || !empty($password)){
-                        if(mysqli_num_rows($query) > 0){
-                            while($row = mysqli_fetch_assoc($query)){
-                                if($email == $row['email'] && $password == $row['password']){
-                                    $err = "d-none";
-                                    $_SESSION['usr_id'] = $row['id'];
-                                    header("Location:./shop.php");
-                                }else{
-                                    $err = "d-block";
-                                }
-                            }
-                        }
-                    }
-                }
-            
-            ?>
-
-
 
                 <form action="" method="post" class=" d-flex align-items-center justify-content-center flex-column">
                     <div class="logo mb-3">

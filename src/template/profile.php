@@ -60,7 +60,7 @@
                     <div class="text-center d-flex align-items-center justify-content-between mb-3">
                         <a href="./shop.php" class="back"><i class="bi bi-chevron-left"></i> Back</a>
                         <div class="mx-4"></div>
-                        <a href="./edit_profile.php?id=<?php echo $user_id; ?>" class="edit"><i class="bi bi-pen"></i> Edit</a>
+                        <a href="./edit_profile.php?id=<?php echo $user_id; ?>" class="edit d-flex align-items-center"><i class="bi bi-pen me-2"></i> Edit</a>
                     </div>
 
                 <?php

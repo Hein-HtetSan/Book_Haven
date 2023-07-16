@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&family=Gochi+Hand&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -23,8 +24,8 @@
     --light-red: #FED7D7;
 
     /* font family  */
-    --Gluten:  'Open Sans', sans-serif;
-    --Gochi:  'Open Sans', sans-serif;
+    --Gluten:  'Gluten', sans-serif;
+    --Gochi:  'Gochi Hand', sans-serif;
 }
 
 

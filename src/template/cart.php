@@ -48,7 +48,7 @@
                     if(mysqli_num_rows($query) != 0){
                         $status = "d-none";
                         while($row = mysqli_fetch_assoc($query)){
-                            $arr[$i] = $row['book_id'];
+                            $arr[$i] = $row['bookid'];
                             $i++;
                         }
                         for($j=0; $j<count($arr); $j++){

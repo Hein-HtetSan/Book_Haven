@@ -4,16 +4,37 @@
 
     include_once("config.php");
     $is_include_in_wishlist = false;
-    $heart = "d-block";
-    $heart_fill = "d-none";
-
-
+    
     while($row = mysqli_fetch_assoc($sql)){
 
+        $heart = "d-block";
+        $heart_fill = "d-none";
+        $cart = "d-block";
+        $cart_fill = "d-none";
         $title = $row['title'];
         $price = $row['price'];
         $img = $row['cover_img'];
         $id = $row['id'];
+        $w_id = $row['book_id'];
+        $c_id = $row['bookid'];
+        // echo $w_id;
+
+        if($w_id != null){
+            $heart = "d-none";
+            $heart_fill = "d-block";
+        }else{
+            $heart = "d-block";
+            $heart_fill="d-none";
+        }
+
+        if($c_id != null){
+            $cart = "d-none";
+            $cart_fill = "d-block";
+        }else{
+            $cart = "d-block";
+            $cart_fill="d-none";
+        }
+
         
 
         $output .= "
@@ -33,7 +54,10 @@
                         <i class='bi bi-heart add-wishlist $heart'></i>
                         <i class='bi bi-heart-fill text-danger added-wishlist $heart_fill'></i>
                     </a>
-                    <a href='../php/cart.php?id=$id' class='cart mb-1'><i class='bi bi-cart add-cart'></i><i class='bi bi-cart-fill text-warning d-none added-cart' ></i></a>
+                    <a href='../php/cart.php?id=$id' class='cart mb-1'>
+                        <i class='bi bi-cart $cart'></i>
+                        <i class='bi bi-cart-fill text-warning  $cart_fill' ></i>
+                    </a>
                 </div>
             </div>
         </div>

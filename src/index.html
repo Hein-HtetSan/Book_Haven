@@ -43,7 +43,7 @@
             <div class="col-12" id="home">
                 <div class="row">
                     <div class="order-1 order-md-0 col-12 col-md-6 px-5 home-content d-flex align-items-center justify-content-center">
-                        <div class="content d-flex align-items-md-end align-items-start justify-content-center flex-column">
+                        <div class="content book-content d-flex align-items-md-end align-items-start justify-content-center flex-column">
                             <span>Welcome to</span>
                             <h3 class="mb-3">Book Haven</h3>
                             <p class="text-start text-md-end">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                     <div class="order-0 order-md-1 col-12 col-md-6  d-flex align-items-center justify-content-center justify-content-md-start px-5 px-md-3 home-image">
-                        <img src="./icons/home.png" class="h-pic" alt="">
+                        <img src="./icons/home.png" class="h-pic books" alt="">
                     </div>
                 </div>
             </div>
@@ -64,10 +64,10 @@
             <div class="col-12" id="category">
                 <div class="row">
                     <div class="col-12 col-md-6  d-flex align-items-center justify-content-center px-5 px-md-3 explore-image ">
-                        <img src="./icons/category.png" class="h-pic" alt="">
+                        <img src="./icons/category.png" class="h-pic category" alt="">
                     </div>
                     <div class="order-1 order-md-0 col-12 col-md-6 px-5 explore-content d-flex align-items-center justify-content-center">
-                        <div class="content d-flex align-items-start align-items justify-content-center flex-column">
+                        <div class="content category-content  d-flex align-items-start align-items justify-content-center flex-column">
                             <h3 class="mb-3">Explore</h3>
                             <p>
                                 Discover Book Categories for Easy Genre Exploration.
@@ -83,7 +83,7 @@
             <div class="col-12" id="about">
                 <div class="row">
                     <div class="order-1 order-md-0 col-12 col-md-6 px-5 about-content d-flex align-items-center justify-content-center">
-                        <div class="content d-flex align-items-md-end justify-content-md-end align-items-start flex-column">
+                        <div class="content about-content d-flex align-items-md-end justify-content-md-end align-items-start flex-column">
                             <h3 class="mb-3">About us</h3>
                             <p class="text-start text-md-end">
                                 Passionate bookshop connecting readers with captivating stories. Discover, explore, and celebrate the joy of reading with us.
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-md-6  d-flex align-items-center justify-content-center justify-content-center px-5 px-md-3 about-image ">
-                        <img src="./icons/bookshop.png" class="h-pic" alt="">
+                        <img src="./icons/bookshop.png" class="h-pic about" alt="">
                     </div>
                 </div>
             </div>
@@ -102,10 +102,10 @@
             <div class="col-12" id="contact">
                 <div class="row">
                     <div class="col-12 col-md-6  d-flex align-items-center justify-content-md-end justify-content-center px-5 px-md-3 contact-image ">
-                        <img src="./icons/contact.png" class="h-pic" alt="">
+                        <img src="./icons/contact.png" class="h-pic contact" alt="">
                     </div>
                     <div class="order-1 order-md-0 col-12 col-md-6 px-5 contact-content d-flex align-items-center justify-content-center">
-                        <div class="content d-flex align-items-start align-items justify-content-center flex-column">
+                        <div class="content contact-content d-flex align-items-start align-items justify-content-center flex-column">
                             <h3 class="mb-3">Contact us</h3>
                             <p>
                                 Connect with us for inquiries, assistance, or feedback. We're here to help!
@@ -161,5 +161,29 @@
     </div>
 
     <script src="./assets/js/aside.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({
+            reset: true,
+            distance: '30px',
+			duration: 2500,
+			delay: 400,
+        });
+
+        ScrollReveal().reveal('.book-content', {delay: 300, origin: 'left', distance: '30px'});
+        ScrollReveal().reveal('.books', {delay: 200, origin: 'right', distance: '30px'});
+
+        ScrollReveal().reveal('.category', {delay: 300, origin: 'left', distance: '30px'});
+        ScrollReveal().reveal('.category-content', {delay: 200, origin: 'right', distance: '30px'});
+
+        ScrollReveal().reveal('.about-content', {delay: 300, origin: 'left', distance: '30px'});
+        ScrollReveal().reveal('.about', {delay: 200, origin: 'right', distance: '30px'});
+
+        ScrollReveal().reveal('.contact', {delay: 300, origin: 'left', distance: '30px'});
+        ScrollReveal().reveal('.contact-content', {delay: 200, origin: 'right', distance: '30px'});
+
+        ScrollReveal().reveal('.footer-box', {delay: 200, origin: 'bottom', distance: '30px'});
+
+    </script>
 </body>
 </html>

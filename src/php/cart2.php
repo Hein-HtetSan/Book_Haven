@@ -15,18 +15,18 @@
             }
     }else{
         while($row = mysqli_fetch_assoc($fetch_query)){
-            if($book_id == $row['book_id']){
+            if($book_id == $row['bookid']){
                 $is_include = true;
             }
         }
         if($is_include){
-            $remove = "DELETE FROM cart WHERE book_id = $book_id";
+            $remove = "DELETE FROM cart WHERE bookid = $book_id";
             $remove_query = mysqli_query($con, $remove);
             if($remove_query){
                 header("location: ../template/cart.php");
             }
         }else{
-            $append = "INSERT INTO cart (book_id) VALUES ($book_id)";
+            $append = "INSERT INTO cart (bookid) VALUES ($book_id)";
             $append_query = mysqli_query($con, $append);
             if($append_query){
                 header("location: ../template/cart.php");

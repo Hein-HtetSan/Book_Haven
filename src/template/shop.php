@@ -1,6 +1,11 @@
 
 
-
+ <?php
+    
+    session_start();
+    $user_id = $_SESSION['usr_id'];
+        
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +20,6 @@
 </head>
 <body>
     <div class="container-fluid position-relative">
-
-
-
-    <?php
-    
-    session_start();
-    $user_id = $_SESSION['usr_id'];
-    
-    
-    ?>
 
         <!-- category modal  -->
         <div class="cate-wrapper p-5">

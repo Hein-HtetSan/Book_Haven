@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&family=Gochi+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500&family=Gochi+Hand&display=swap');
 *{
     padding: 0;
@@ -23,8 +24,8 @@
     --light-red: #FED7D7;
 
     /* font family  */
-    --Gluten:  'Open Sans', sans-serif;
-    --Gochi:  'Open Sans', sans-serif;
+    --Gluten:  'Gluten', sans-serif;
+    --Gochi:  'Gochi Hand', sans-serif;
 }
 
 .container-fluid{
@@ -61,6 +62,13 @@
 
 .profile-wrapper .title{
     color: var(--violet) !important;
+    font-family: var(--Gochi);
+    font-size: 24px;
+}
+
+.profile-wrapper span{
+    font-family: var(--Gochi);
+    color: var(--placeholder);
 }
 
 .logout{
@@ -82,6 +90,7 @@
     color: var(--placeholder);
     /* font-weight: bold; */
     text-decoration: none;
+    font-family: var(--Gochi);
 }
 
 .back:hover{
@@ -96,6 +105,7 @@
     background-color: var(--oxford-blue);
     color: #fff;
     text-decoration: none;
+    font-family: var(--Gochi);
 }
 
 /* edit profile  */
