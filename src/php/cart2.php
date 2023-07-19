@@ -2,6 +2,7 @@
 
     include_once("config.php");
     $book_id = $_GET['id'];
+    $cart_id = $_GET['cart_id'];
     $is_include = false;
 
     $fetch = "SELECT * FROM cart";
@@ -23,7 +24,11 @@
             $remove = "DELETE FROM cart WHERE bookid = $book_id";
             $remove_query = mysqli_query($con, $remove);
             if($remove_query){
-                header("location: ../template/cart.php");
+                $remove_order = "DELETE FROM orderitem WHERE cart_id = $cart_id";
+                $remove_order_query = mysqli_query($con, $remove_order);
+                if($remove_order_query){
+                    header("location: ../template/cart.php");
+                }
             }
         }else{
             $append = "INSERT INTO cart (bookid) VALUES ($book_id)";

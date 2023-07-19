@@ -26,6 +26,12 @@
     small.active{
         transform: translateY(-25%);
     }
+    form input, form textarea{
+        border: 2px solid #999;
+    }
+    form input:focus, form textarea:focus{
+        border: none;
+    }
 </style>
 <body>
     <div class="container-fluid">

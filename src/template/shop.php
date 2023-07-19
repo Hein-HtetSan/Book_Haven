@@ -3,6 +3,7 @@
  <?php
     
     session_start();
+    include_once("../php/config.php");
     $user_id = $_SESSION['usr_id'];
         
 ?>
@@ -24,14 +25,14 @@
         <!-- category modal  -->
         <div class="cate-wrapper p-5">
             <div class="cate-modal shadow d-flex flex-column align-items-center justify-content-center py-5">
-                <a href="" class="cate-link ">All</a>
-                <a href="" class="cate-link mt-2">Classics</a>
-                <a href="" class="cate-link mt-2">Crime</a>
-                <a href="" class="cate-link mt-2">Fantasy</a>
-                <a href="" class="cate-link mt-2">Horror</a>
-                <a href="" class="cate-link mt-2">Fiction</a>
-                <a href="" class="cate-link mt-2">Non-Fiction</a>
-                <a href="" class="cate-link mt-2">Historical fiction</a>
+                <a href="" class="cate-link active">All</a>
+                <?php
+                    $sql2 = "SELECT * FROM category";
+                    $query2 = mysqli_query($con, $sql2);
+                    while($row2 = mysqli_fetch_assoc($query2)):
+                ?>
+                <a href="" class="cate-link active"><?php echo $row2['catname'];?></a>
+                <?php endwhile;?>
             </div>
         </div>
         <!-- end of category modal  -->

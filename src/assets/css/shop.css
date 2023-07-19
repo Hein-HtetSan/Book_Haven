@@ -61,7 +61,7 @@
     width: 80%;
     height: 40px;
     border-radius: 30px;
-    border: none;
+    border: 2px solid var(--placeholder);
     background: var(--input);
     outline: none;
     font-family: var(--Gochi);
@@ -71,6 +71,7 @@
     text-indent: 10%;
 }
 .navbar .searchbar input:focus{
+    border: none;
     outline: 2px solid var(--azul);
 }
 .navbar .searchbar span{

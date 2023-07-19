@@ -10,6 +10,7 @@
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
 <style>
+    
     .profile-wrapper{
         height: 80vh;
     }

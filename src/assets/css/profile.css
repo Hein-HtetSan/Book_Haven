@@ -119,8 +119,10 @@ input{
     border: none;
     border-radius: 10px;
     outline: none;
+    border: 2px solid var(--placeholder);
 }
 input:focus{
+    border: none;
     outline: 2px solid var(--azul);
 }
 

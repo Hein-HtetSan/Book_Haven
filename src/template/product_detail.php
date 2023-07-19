@@ -27,14 +27,15 @@
 
                 include_once("../php/config.php");
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM book WHERE id = $id";
+                $sql = "SELECT * FROM book LEFT JOIN category ON book.catid=category.cat_id WHERE id = $id";
                 $query = mysqli_query($con, $sql);
                 while($row = mysqli_fetch_assoc($query)){
                     $title = $row['title'];
-                    $price = $row['price'];
+                    $price = $row['prices'];
                     $img = $row['cover_img'];
                     $descp = $row['description'];
                     $author = $row['Author'];
+                    $category = $row['catname'];
 
                     echo "
                     <div class='col-12 col-md-6 product-image'>
@@ -44,14 +45,15 @@
                                         background-size: cover;
                                         background-position: center; 
                                         width: 200px; height: 300px;
-                                        border-radius: 10px;'></div>
+                                        border-radius: 10px;
+                                        border: 2px solid var(--placeholder);'></div>
                                 </div>
                                 <div class='col-12 col-md-6 product-details d-flex align-items-center justiyf-content-center'>
                                     <div class='content-wrapper text-start px-3 px-md-5'>
                                         <small class='instock'>in stock</small>
                                         <h3>$title</h3>
                                         <div class='mt-3 d-flex flex-column align-items-start justify-content-center border-bottom pb-2 mb-3'>
-                                            <small class='category-name mb-1'>Category : <span>Genetics</span></small>
+                                            <small class='category-name mb-1'>Category : <span>$category</span></small>
                                             <small class='author-name'>Author : <span>$author</span></small>
                                         </div>
                                         <p class='price'>Price : <span>$$price</span></p>

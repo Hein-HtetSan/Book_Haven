@@ -53,22 +53,30 @@
                         }
                         for($j=0; $j<count($arr); $j++){
                             // echo $arr[$j];
-                            $fetch_book = mysqli_query($con, "SELECT * FROM book LEFT JOIN cart ON book.id=cart.bookid WHERE id = $arr[$j]");
+                            $fetch_book = mysqli_query($con, "SELECT * FROM book LEFT JOIN cart ON book.id=cart.bookid LEFT JOIN orderitem ON orderitem.cart_id=cart.cat_id WHERE id = $arr[$j]");
                             $row2 = mysqli_fetch_assoc($fetch_book);
                             $title = $row2['title'];
-                            $price = $row2['price'];
+                            $price = $row2['prices'];
                             $img = $row2['cover_img'];
                             $id = $row2['id'];
                             $count = $row2['count'];
                             $cart_id = $row2['cat_id'];
                             $usr_id = $row2['user_id'];
+                            $text = "text-secondary";
+                            $is_selected = $row2['cart_id'];
+                            if($is_selected != null){
+                                $text = "text-warning";
+                            }else{
+                                $text = "text-secondary";
+                            }
                             // $count = $row2['count'];
 
                             echo "
                             <div class=' itembox d-flex align-items-center justify-content-center px-3 py-2 mb-3'>
                                 <!-- image  -->
                                 <div class='img-box shadow me-5' style='background: url(../books/$img);
-                                background-position: center; background-size: cover; background-repeat: no-repeat;'></div>
+                                background-position: center; background-size: cover; 
+                                border: 2px solid var(--placeholder); background-repeat: no-repeat;'></div>
                                 <!-- content  -->
                                 <div class='d-flex align-items-center justify-content-start flex-column '>
                                     <h3 class='mb-3 text-start'>$title</h3>
@@ -80,8 +88,10 @@
                                         <a href='../php/add.php?id=$id' class='add'>+</a>
                                     </div>
                                     <div class='btn-gp d-flex align-items-center justify-content-start mt-2 text-start'>
-                                        <a href='../php/order.php?cart_id=$cart_id&price=$price&usr_id=$usr_id' class='me-3 select' id='select'>Select</a>
-                                        <a href='../php/cart2.php?id=$id' class='mb-2'><i class='bi bi-trash'></i></a>
+                                        <a href='../php/order.php?cart_id=$cart_id&price=$price&usr_id=$usr_id' class='me-3 select btn btn-sm' id='select'>
+                                            <i class='bi bi-check2-all $text fs-4 fw-bold'></i>
+                                        </a>
+                                        <a href='../php/cart2.php?id=$id&cart_id=$cart_id' class='mb-2'><i class='bi bi-trash'></i></a>
                                     </div>
                                 </div>
                             </div>

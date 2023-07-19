@@ -29,7 +29,7 @@ categoryBtn.onclick = () => {
 
 category_links.forEach(e => {
     e.onclick = (event) => {
-        event.preventDefault();
+        // event.preventDefault();
         categoryFrame.style.transform = "translateY(-100%)";
     }
 })

@@ -63,7 +63,7 @@
                             $fetch_book = mysqli_query($con, "SELECT * FROM book LEFT JOIN wishlist ON book.id = wishlist.book_id WHERE id = $arr[$j] && user_id=$user_id");
                             $row2 = mysqli_fetch_assoc($fetch_book);
                             $title = $row2['title'];
-                            $price = $row2['price'];
+                            $price = $row2['prices'];
                             $img = $row2['cover_img'];
                             $id = $row2['id'];
 
@@ -71,14 +71,14 @@
                             <div class='itembox col-12 col-md-4 d-flex align-items-center justify-content-center px-3 py-2 mb-3'>
                                 <!-- image  -->
                                 <div class='img-box shadow me-5' style='background: url(../books/$img);
-                                background-position: center; background-size: cover; background-repeat: no-repeat;'></div>
+                                background-position: center; background-size: cover; 
+                                border: 2px solid var(--placeholder); background-repeat: no-repeat;'></div>
                                 <!-- content  -->
                                 <div class='d-flex align-items-start justify-content-start flex-column'>
                                     <h3 class='mb-3'>$title</h3>
                                     <span class='border-bottom mb-3'>Price : <span class='price'>$$price</span></span>
-                                    <a href='./product_detail.php?id=$id' class='btn btn-sm btn-warning info '>Book Info</a>
-                                    <div class='btn-gp d-flex align-items-center justify-content-start mt-2'>
-                                        <a href='' class='me-3 cart' id='addcart'><i class='bi bi-cart-fill '></i></a>
+                                    <div class='d-flex align-items-start justify-content-center'>
+                                        <a href='./product_detail.php?id=$id' class='btn btn-sm btn-warning info me-3'>Book Info</a>
                                         <a href='../php/wishlist2.php?id=$id&usr_id=$user_id' class=' mt-1'><i class='bi bi-trash'></i></a>
                                     </div>
                                 </div>

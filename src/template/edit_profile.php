@@ -10,8 +10,19 @@
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
 <style>
+    h2{
+        font-family: var(--Gluten);
+        color: var(--azul);
+    }
     .profile-wrapper{
         height: 65vh;
+    }
+    input{
+        border: 2px solid #999;
+        font-family: var(--Gochi);
+    }
+    input:focus{
+        border:none;
     }
 </style>
 <body>
@@ -43,7 +54,7 @@
 
                     <form action="" method="post" class="w-100">
 
-                        <h2 class="text-primary my-3">Information</h2>
+                        <h2 class=" my-3">Information</h2>
     
                         <div class="text-center d-flex align-items-center justify-content-between mb-3 position-relative">
                             <i class="bi bi-person-fill me-3 fs-4"></i>
@@ -58,7 +69,7 @@
                             <input type="password" name="password" value="<?php echo $password;?>">
                         </div>
                         <div class="text-center d-flex align-items-center justify-content-between mb-5 position-relative">
-                            <i class="bi bi-telephone-fill me-4  fs-5"></i>
+                            <i class="bi bi-telephone-fill me-3  fs-5"></i>
                             <input type="number" name="phone" value="<?php echo $phone;?>">
                         </div>
                         <div class="text-center d-flex align-items-center justify-content-between mb-3">

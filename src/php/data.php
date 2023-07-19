@@ -12,7 +12,7 @@
         $cart = "d-block";
         $cart_fill = "d-none";
         $title = $row['title'];
-        $price = $row['price'];
+        $price = $row['prices'];
         $img = $row['cover_img'];
         $id = $row['id'];
         $w_id = $row['book_id'];
@@ -43,7 +43,8 @@
                 <div class='image shadow' style='background: url(../books/$img);
                     background-repeat: no-repeat;
                     background-size: cover;
-                    background-position: center;'></div>
+                    background-position: center;
+                    border: 2px solid #999'></div>
             </a>
             <!-- <div class='mt-2'></div> -->
             <a href='' class='name px-lg-3 px-1'>$title</a>

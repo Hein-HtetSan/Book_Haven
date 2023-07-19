@@ -38,6 +38,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
+<style>
+    form .field{
+        border: 2px solid var(--placeholder);
+    }
+    form .field:focus{
+        border: none;
+    }
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
