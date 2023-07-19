@@ -1,6 +1,5 @@
 const searchBar = document.querySelector(".searchbar input")
-
-
+// const category_links = document.querySelectorAll(".cate-modal a");
 
 searchBar.onkeyup = () => {
     let searchTerm = searchBar.value;
@@ -34,7 +33,7 @@ setInterval(() => {
             if(xhr.status === 200){
                 let data = xhr.response;
                 // console.log(data);
-                if(!searchBar.classList.contains("active")){
+                if(!searchBar.classList.contains("active") && all.classList.contains("active")){
                     document.querySelector(".products-wrapper").innerHTML = data;
                 }
             }
@@ -42,3 +41,12 @@ setInterval(() => {
     }
     xhr.send();
 }, 500)
+
+
+// category_links.forEach(e => {
+//     e.onclick = (event) => {
+//         event.preventDefault();
+//         categoryFrame.style.transform = "translateY(-100%)";
+//         console.log(e.classList);
+//     }
+// })

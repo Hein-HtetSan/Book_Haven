@@ -39,6 +39,7 @@
                 <?php
                 
                     include_once("../php/config.php");
+                    // $user_id = $_SESSION['usr_id'];
                     $status = "d-none";
                     $i = 0;
                     $arr = [];
@@ -59,7 +60,7 @@
                             $price = $row2['prices'];
                             $img = $row2['cover_img'];
                             $id = $row2['id'];
-                            $count = $row2['count'];
+                            $count = $row2['counts'];
                             $cart_id = $row2['cat_id'];
                             $usr_id = $row2['user_id'];
                             $text = "text-secondary";
@@ -129,6 +130,8 @@
         <?php
         
             include_once("../php/config.php");
+            $item_count = 0;
+            $total_price = 0;
             $status= "d-none";
             $transform = "translateY(100%)";
             $sql3 = "SELECT * FROM orderitem LEFT JOIN cart ON orderitem.cart_id=cart.cat_id";
@@ -140,20 +143,29 @@
                 $status = "d-none";
                 $transform = "translateY(100%)";
             }
-        
+                    
+
+            if(mysqli_num_rows($query3) != 0){
+                while($row3 = mysqli_fetch_assoc($query3)):
+                    $item_count += $row3['counts'];
+                    $total_price += $row3['total'];
+                    $user_id = $row3['user_id'];
+            
         ?>
 
         <div class="row">
             <div class="col-12 d-flex align-items-center justify-content-center footer <?php echo $status; ?> py-4" style="transform: <?php echo $transform;?>">
                 <div class="footer-wrapper px-5 py-5 d-flex align-items-center justify-content-between">
                     <div class="footer_item_price d-flex flex-column flex-md-row align-items-start justify-content-center text-center text-light py-4">
-                        <h6 class="me-md-3 me-0">Items : <span>1</span></h6> 
-                        <h6>Prices : $<span>50</span></h6>
+                        <h6 class="me-md-3 me-0">Items : <span><?php echo $item_count;?></span></h6> 
+                        <h6>Prices : $<span><?php echo $total_price;?></span></h6>
                     </div>
-                    <a href="" class="shop">Buy Now</a>
+                    <a href="./order.php?user_id=<?php echo $user_id;?>" class="shop">Buy Now</a>
                 </div>
             </div>
         </div>
+
+        <?php endwhile;} ?>
 
 
     </div>

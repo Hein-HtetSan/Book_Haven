@@ -25,13 +25,13 @@
         <!-- category modal  -->
         <div class="cate-wrapper p-5">
             <div class="cate-modal shadow d-flex flex-column align-items-center justify-content-center py-5">
-                <a href="" class="cate-link active">All</a>
+                <a href="" class="all cate-link active">All</sp>
                 <?php
                     $sql2 = "SELECT * FROM category";
                     $query2 = mysqli_query($con, $sql2);
                     while($row2 = mysqli_fetch_assoc($query2)):
                 ?>
-                <a href="" class="cate-link active"><?php echo $row2['catname'];?></a>
+                    <a href="" class="cate-link <?php echo $row2['cat_id'];?>"><?php echo $row2['catname'];?></a>
                 <?php endwhile;?>
             </div>
         </div>
@@ -101,6 +101,16 @@
     </div>
     <script src="../assets/js/shop.js"></script>
     <script src="../assets/js/items.js"></script>
-    
+    <script>
+        const categorylink = document.querySelectorAll(".cate-modal .cate-link");
+        const all = document.querySelectorAll(".cate-modal .all");
+        const categoryFrame = document.querySelector(".cate-wrapper");
+        categorylink.forEach(e => {
+            e.addEventListener("click", () => {
+                e.classList.add("active");
+                categoryFrame.style.transform = "translateY(-100%)";  
+            })
+        })
+    </script>
 </body>
 </html>

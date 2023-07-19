@@ -35,7 +35,6 @@
         }
         $is_include = false;
     }
-
     // echo $cart_id;
 
 ?>

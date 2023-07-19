@@ -5,11 +5,14 @@
     $user_id = $_GET['usr_id'];
     $is_include = false;
 
-    $fetch = "SELECT * FROM cart WHERE user_id=$user_id";
+    $fetch = "SELECT * FROM cart LEFT JOIN book ON book.id=cart.bookid WHERE user_id=$user_id";
     $fetch_query = mysqli_query($con, $fetch);
 
     if(mysqli_num_rows($fetch_query) == 0){
-        $append = "INSERT INTO cart (bookid,user_id, count) VALUES ($book_id, $user_id, 1)";
+        $total_price = mysqli_query($con, "SELECT * FROM book WHERE id=$book_id");
+        $row2 = mysqli_fetch_assoc($total_price);
+        $total = $row2['prices'];
+        $append = "INSERT INTO cart (bookid,user_id, counts, total) VALUES ($book_id, $user_id, 1, $total)";
             $append_query = mysqli_query($con, $append);
             if($append_query){
                 header("location:../template/shop.php");
@@ -27,7 +30,10 @@
                 header("location: ../template/shop.php");
             }
         }else{
-            $append = "INSERT INTO cart (bookid, user_id, count) VALUES ($book_id, $user_id,1)";
+            $total_price = mysqli_query($con, "SELECT * FROM book WHERE id=$book_id");
+            $row2 = mysqli_fetch_assoc($total_price);
+            $total = $row2['prices'];
+            $append = "INSERT INTO cart (bookid, user_id, counts, total) VALUES ($book_id, $user_id,1, $total)";
             $append_query = mysqli_query($con, $append);
             if($append_query){
                 header("location: ../template/shop.php");

@@ -4,8 +4,6 @@ const heartFill = document.querySelector(".added-wishlist");
 const cart = document.querySelector(".add-cart");
 const cartFill = document.querySelector(".added-cart");
 const categoryBtn = document.querySelector(".categ");
-const categoryFrame = document.querySelector(".cate-wrapper");
-const category_links = document.querySelectorAll(".cate-modal a");
 const listBtn = document.querySelector(".listbtn");
 const linkLists = document.querySelector(".link-list");
 const linkLists_links = document.querySelectorAll(".link-list a");
@@ -27,11 +25,6 @@ categoryBtn.onclick = () => {
     categoryFrame.style.transform = "translateY(0)";
 }
 
-category_links.forEach(e => {
-    e.onclick = (event) => {
-        // event.preventDefault();
-        categoryFrame.style.transform = "translateY(-100%)";
-    }
-})
+
 
 
