@@ -38,7 +38,7 @@
                         <a href="./book.php" class="active d-flex span text-decoration-none"><i class="bi bi-journal-bookmark me-2"></i> <span class="d-none d-md-block span2 active"> Book </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href="./order.html" class="text-decoration-none d-flex span"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2"> Order </span></a>
+                        <a href="./order.php" class="text-decoration-none d-flex span"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2"> Order </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
                         <a href="./message.html" class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>

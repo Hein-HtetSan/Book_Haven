@@ -34,7 +34,7 @@
                         <a href="./book.php" class="text-decoration-none d-flex span"><i class="bi bi-journal-bookmark me-2"></i> <span class="d-none d-md-block span2 "> Book </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href="./order.html" class="active d-flex span text-decoration-none"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2 active"> Order </span></a>
+                        <a href="./order.php" class="active d-flex span text-decoration-none"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2 active"> Order </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
                         <a href="./message.html" class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
@@ -67,22 +67,43 @@
                                     <th>Order Detail</th>
                                     <th>Action</th>
                                 </tr>
+
+                                <?php
+
+                                    include("../php/config.php");
+                                    $sql = "SELECT DISTINCT order_code, order_address, fname, lname, phone FROM order_details
+                                            LEFT JOIN user ON order_details.userid=user.id";
+                                    $query = mysqli_query($con, $sql);
+                                    $count = 0;
+                                    while($row = mysqli_fetch_assoc($query)):
+                                        $count++;
+                                        $order_code = $row['order_code'];
+                                        $name = $row['fname']."".$row['lname'];
+                                        $address = $row['order_address'];
+                                        $phone = $row['phone'];
+                                ?>
                                 
-                                <tr>
-                                    <td>1.</td>
-                                    <td>#11111</td>
-                                    <td>Mg Mg</td>
-                                    <td>Yangon</td>
-                                    <td>097894654</td>
-                                    <td>
-                                        <a href="" class="btn btn-sm btn-warning"><i class="bi bi-exclamation-circle-fill"></i> Details</a>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center justify-content-center fs-5">
-                                            <a href="" class="me-3 btn btn-sm btn-primary border border-rounded"><i class="bi bi-check-all"></i> Confirm</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td><?php echo $count;?>.</td>
+                                        <td><?php echo $order_code;?></td>
+                                        <td><?php echo $name;?></td>
+                                        <td><?php echo $address;?></td>
+                                        <td><?php echo $phone;?></td>
+                                        <td>
+                                            <a href="" class="btn btn-sm btn-warning"><i class="bi bi-exclamation-circle-fill"></i> Details</a>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center justify-content-center fs-5">
+                                                <a href="" class="me-3 btn btn-sm btn-primary border border-rounded"><i class="bi bi-check-all"></i> Confirm</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                <?php
+
+                                    endwhile;
+                                
+                                ?>
                                 
     
                             </table>

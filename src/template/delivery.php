@@ -68,7 +68,7 @@
                                 <span>Arrival Date : <span><?php echo $arrive_time;?></span></span>
                             </div>
                             <div class="order-det">
-                                <a href="" class="btn text-center btn-warning text-secondary"><i class="bi bi-info-square"></i> Detail</a>
+                                <a href="./order_detail.php?order_id=<?php echo $code;?>" class="btn text-center btn-warning text-secondary"><i class="bi bi-info-square"></i> Detail</a>
                                 <a href="../php/cancel_order.php?order_id=<?php echo $code;?>" class="btn btn-danger ">Cancel</a>
                             </div>
                         </div>
@@ -81,7 +81,6 @@
                 }else{
                     $status = "d-block";
                 }
-                
             ?>
                  
                 <div class="status <?php echo $status;?>">
