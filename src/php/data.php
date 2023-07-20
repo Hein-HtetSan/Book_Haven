@@ -3,6 +3,7 @@
 <?php
 
     include_once("config.php");
+    $user_id = $_SESSION['usr_id'];
     $is_include_in_wishlist = false;
     
     while($row = mysqli_fetch_assoc($sql)){
@@ -19,7 +20,7 @@
         $c_id = $row['bookid'];
 
 
-        if($w_id != null || $w_id == $user_id){
+        if($w_id != null ){
             $heart = "d-none";
             $heart_fill = "d-block";
         }else{

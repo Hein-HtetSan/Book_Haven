@@ -1,6 +1,5 @@
 
-
- <?php
+<?php
     
     session_start();
     include_once("../php/config.php");
@@ -87,11 +86,9 @@
                 <div class="row products-wrapper align-items-center">
 
                     <!-- product items -->
-                    <!-- end of product item  -->
-                    
+                    <!-- end of product item  -->                    
                     
                 </div>
-
                 <div class="mb-5"></div>
 
             </div>
@@ -101,7 +98,7 @@
     </div>
     <script src="../assets/js/shop.js"></script>
     <script src="../assets/js/items.js"></script>
-    <script>
+    <!-- <script>
         const categorylink = document.querySelectorAll(".cate-modal .cate-link");
         const all = document.querySelectorAll(".cate-modal .all");
         const categoryFrame = document.querySelector(".cate-wrapper");
@@ -111,6 +108,6 @@
                 categoryFrame.style.transform = "translateY(-100%)";  
             })
         })
-    </script>
+    </script> -->
 </body>
 </html>

@@ -33,7 +33,7 @@ setInterval(() => {
             if(xhr.status === 200){
                 let data = xhr.response;
                 // console.log(data);
-                if(!searchBar.classList.contains("active") && all.classList.contains("active")){
+                if(!searchBar.classList.contains("active")){
                     document.querySelector(".products-wrapper").innerHTML = data;
                 }
             }
@@ -43,10 +43,4 @@ setInterval(() => {
 }, 500)
 
 
-// category_links.forEach(e => {
-//     e.onclick = (event) => {
-//         event.preventDefault();
-//         categoryFrame.style.transform = "translateY(-100%)";
-//         console.log(e.classList);
-//     }
-// })
+
