@@ -20,7 +20,7 @@
         $c_id = $row['bookid'];
 
 
-        if($w_id != null ){
+        if($w_id != null){
             $heart = "d-none";
             $heart_fill = "d-block";
         }else{

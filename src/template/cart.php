@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $user_id = $_SESSION['usr_id'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,13 +42,11 @@
 
 
                 <?php
-                
                     include_once("../php/config.php");
-                    // $user_id = $_SESSION['usr_id'];
                     $status = "d-none";
                     $i = 0;
                     $arr = [];
-                    $sql = "SELECT * FROM cart";
+                    $sql = "SELECT * FROM cart WHERE user_id=$user_id";
                     $query = mysqli_query($con, $sql);
 
                     if(mysqli_num_rows($query) != 0){
@@ -134,7 +137,7 @@
             $total_price = 0;
             $status= "d-none";
             $transform = "translateY(100%)";
-            $sql3 = "SELECT * FROM orderitem LEFT JOIN cart ON orderitem.cart_id=cart.cat_id";
+            $sql3 = "SELECT * FROM orderitem LEFT JOIN cart ON orderitem.cart_id=cart.cat_id WHERE cart.user_id=$user_id";
             $query3 = mysqli_query($con, $sql3);
             if(mysqli_num_rows($query3) != 0){
                 $status = "d-block";

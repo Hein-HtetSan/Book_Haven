@@ -98,16 +98,24 @@
     </div>
     <script src="../assets/js/shop.js"></script>
     <script src="../assets/js/items.js"></script>
-    <!-- <script>
-        const categorylink = document.querySelectorAll(".cate-modal .cate-link");
-        const all = document.querySelectorAll(".cate-modal .all");
-        const categoryFrame = document.querySelector(".cate-wrapper");
-        categorylink.forEach(e => {
-            e.addEventListener("click", () => {
-                e.classList.add("active");
-                categoryFrame.style.transform = "translateY(-100%)";  
-            })
-        })
-    </script> -->
+    <script>
+        setInterval(() => {
+        // let's start Ajax
+        let xhr = new XMLHttpRequest(); // creating XML object
+        xhr.open("GET", "../php/items.php", true);
+        xhr.onload = () => {
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    let data = xhr.response;
+                    // console.log(data);
+                    if(!searchBar.classList.contains("active")){
+                        document.querySelector(".products-wrapper").innerHTML = data;
+                    }
+                }
+            }
+        }
+        xhr.send();
+    }, 500)
+    </script>
 </body>
 </html>

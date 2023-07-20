@@ -74,6 +74,12 @@
     height: auto;
     /* background: var(--gradient-blue); */
 }
+.itembox-wrapper{
+    background: #fff;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
 .itembox .img-box{
     width: 150px;
     height: 250px;
@@ -153,4 +159,9 @@
  }
 .order-det{
     font-family: var(--Gochi) !important;
+}
+
+.itembox-wrapper .bi-box{
+    font-size: 85px;
+    color: var(--azul);
 }
