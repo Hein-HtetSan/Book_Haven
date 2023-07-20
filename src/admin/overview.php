@@ -76,6 +76,11 @@
                     $row2 = mysqli_fetch_assoc($query2);
                     $book_count = $row2['book_count'];
 
+                    $sql3 = "SELECT count(DISTINCT order_code) AS order_codes FROM order_details";
+                    $query3 = mysqli_query($con, $sql3);
+                    $row3 = mysqli_fetch_assoc($query3);
+                    $order_count = $row3['order_codes'];
+
                 ?>
                 <div class="row px-2 py-2 px-md-4 px-md-4 ">
                     <div class="col-6 col-md-4 mb-2 mb-md-2">
@@ -100,7 +105,7 @@
                         <div class="user-card bg-light shadow d-flex align-items-center justify-content-evenly pb-4">
                             <div class="d-flex flex-column align-items-center justify-content-start pt-4">
                                 <span>Order</span>
-                                <span>0</span>
+                                <span><?php echo $order_count;?></span>
                             </div>
                             <i class="bi bi-inboxes-fill"></i>
                         </div>

@@ -1,12 +1,53 @@
-<!-- <?php
+<?php
 
-    // include("../php/config.php");
-    // $user_id = $_GET['user_id'];
+    session_start();
+    include("../php/config.php");
+    $user_id = $_SESSION['usr_id'];
 
-    // echo $user_id;
+        if(isset($_POST['confirm_order'])){
+            $address = $_POST['address'];
+            if(!empty($address) || $address != null){
+                $query2;
+                $sql = "SELECT * FROM orderitem
+                LEFT JOIN cart ON orderitem.cart_id = cart.cat_id
+                LEFT JOIN book ON cart.bookid = book.id
+                WHERE orderitem.usr_id=$user_id";
+                $query = mysqli_query($con, $sql);
+                $order_code = rand(0, 100000);
+                // Get the current date
+                $currentDate = date('Y/m/d');
 
+                // Convert the date string to a DateTime object
+                $dateObj = new DateTime($currentDate);
 
-?> -->
+                // Add 2 days to the date
+                $dateObj->modify('+2 days');
+
+                // Format the updated date as a string
+                $updatedDate = $dateObj->format('Y/m/d'); 
+                while($row = mysqli_fetch_assoc($query)){
+                    $userid = $row['user_id'];
+                    $book = $row['title'];
+                    $count = $row['counts'];
+                    $category = $row['catid'];
+                    $total = $row['total'];
+                    $sql2 = "INSERT INTO order_details
+                    (order_code, userid, order_count, order_categ, order_address, order_total, order_books, order_date, arrive_date)
+                    VALUES ($order_code, $userid, $count, $category, '$address', $total, '$book', '$currentDate', '$updatedDate')";
+                    $query2 = mysqli_query($con, $sql2);
+                }
+                if($query2){
+                    $sql3 = "DELETE cart FROM cart LEFT JOIN orderitem ON cart.cat_id = orderitem.cart_id WHERE cart.cat_id = orderitem.cart_id";
+                    $query3 = mysqli_query($con, $sql3);
+                    $sql4 = "DELETE FROM orderitem";
+                    $query4 = mysqli_query($con, $sql4);
+                    if($query3 && $query4){
+                        header("location:./delivery.php");
+                    }
+                }
+            }
+        }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -120,16 +161,17 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 address-wrapper d-flex align-items-center justify-content-center">
-                <form class="address-card shadow p-4 d-flex flex-column justify-content-center align-items-start">
+                <form method="post" class="address-card shadow p-4 d-flex flex-column justify-content-center align-items-start">
                     <h2>Address</h2>
                     <p>Let's us know your address first!</p>
                     <div class="d-flex align-items-center address-wrap mb-5">
                         <i class="bi bi-geo-alt-fill me-3"></i> <input type="text" name="address" placeholder="Enter your address">
                     </div>
-                    <div class="d-flex btn-wrap align-items-center justify-content-between">
-                        <a href="" class="back">Back</a>
-                        <a href="" class="confirm">Confirm Order</a>
+                    <div class="d-flex btn-wrap align-items-center justify-content-between mb-3">
+                        <a href="./cart.php" class="back">Back</a>
+                        <button name="confirm_order" class="confirm">Confirm Order</button>
                     </div>
+                    <small class="text-warning d-none text-small">Field can't be blank!</small>
                 </form>
             </div>
         </div>
