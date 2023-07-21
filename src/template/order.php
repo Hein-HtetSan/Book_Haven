@@ -7,7 +7,7 @@
         if(isset($_POST['confirm_order'])){
             $address = $_POST['address'];
             if(!empty($address) || $address != null){
-                $query2;
+                $query2 = null;
                 $sql = "SELECT * FROM orderitem
                 LEFT JOIN cart ON orderitem.cart_id = cart.cat_id
                 LEFT JOIN book ON cart.bookid = book.id

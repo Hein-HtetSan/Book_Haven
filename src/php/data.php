@@ -8,35 +8,47 @@
     
     while($row = mysqli_fetch_assoc($sql)){
 
-        $heart = "d-block";
-        $heart_fill = "d-none";
-        $cart = "d-block";
-        $cart_fill = "d-none";
         $title = $row['title'];
         $price = $row['prices'];
         $img = $row['cover_img'];
         $id = $row['id'];
-        $w_id = $row['book_id'];
-        $c_id = $row['bookid'];
+        $cart_fill = "d-none";
+        $heart = "d-block";
+        $heart_fill = "d-none";
+        $cart = "d-block";
 
+        $sql2 = "SELECT * FROM wishlist WHERE book_id= $id AND user_id=$user_id";
+        $query2 = mysqli_query($con, $sql2);
 
-        if($w_id != null){
-            $heart = "d-none";
-            $heart_fill = "d-block";
-        }else{
-            $heart = "d-block";
-            $heart_fill="d-none";
+        $sql3 = "SELECT * FROM cart WHERE bookid= $id AND user_id=$user_id";
+        $query3 = mysqli_query($con, $sql3);
+
+        if($query2){
+            if (mysqli_num_rows($query2) > 0) {
+                $row2 = mysqli_fetch_assoc($query2);
+                if($row2['book_id'] == null){
+                    $heart = "d-block";
+                    $heart_fill="d-none";
+                }else{
+                    $heart = "d-none";
+                    $heart_fill = "d-block";
+                }
+            }   
         }
 
-        if($c_id != null){
-            $cart = "d-none";
-            $cart_fill = "d-block";
-        }else{
-            $cart = "d-block";
-            $cart_fill="d-none";
-        }
 
-        
+        if($query3){
+            if (mysqli_num_rows($query3) > 0) {
+                $row3 = mysqli_fetch_assoc($query3);
+                if($row3['bookid'] == null){
+                    $cart = "d-block";
+                    $cart_fill="d-none";
+                }else{
+                    $cart = "d-none";
+                    $cart_fill = "d-block";
+                }
+            }   
+        }
 
         $output .= "
         <div class='col-6 col-md-3 col-lg-2 p-3 text-center item'>

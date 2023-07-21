@@ -19,7 +19,11 @@
 </head>
 <style>
     .table-wrapper{
+        overflow-y: scroll;
         border: 2px solid var(--placeholder);
+    }
+    .table-wrapper::-webkit-scrollbar{
+        display: none;
     }
     .user-card{
         border: 2px solid var(--placeholder);

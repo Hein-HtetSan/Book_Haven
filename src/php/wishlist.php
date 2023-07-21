@@ -5,7 +5,7 @@
     $user_id = $_GET['usr_id'];
     $is_include = false;
 
-    $fetch = "SELECT * FROM wishlist WHERE user_id=$user_id";
+    $fetch = "SELECT * FROM wishlist LEFT JOIN book ON book.id=wishlist.book_id WHERE user_id=$user_id";
     $fetch_query = mysqli_query($con, $fetch);
 
     if(mysqli_num_rows($fetch_query) == 0){

@@ -15,7 +15,11 @@
 </head>
 <style>
     .table-wrapper{
+        overflow-y: scroll;
         border: 2px solid var(--placeholder);
+    }
+    .table-wrapper::-webkit-scrollbar{
+        display: none;
     }
 </style>
 <body>
