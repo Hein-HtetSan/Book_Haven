@@ -1,3 +1,25 @@
+<?php
+
+    include("../php/config.php");
+    
+
+    if(isset($_POST['signin'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        if(!empty($email) || !empty($password)){
+            $sql = "SELECT * FROM user WHERE id=81374";
+            $query = mysqli_query($con, $sql);
+            $row = mysqli_fetch_assoc($query);
+            if($email == $row['email'] && $password == $row['password']){
+                header("location:./overview.php");
+            }
+        }
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +31,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
+<style>
+    input{
+        border: 2px solid var(--placeholder) !important;
+    }
+    input:focus{
+        border: none !important;
+    }
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -29,7 +59,7 @@
                             <i class="bi bi-eye"></i>
                             <i class="bi bi-eye-slash d-none"></i>
                         </div>
-                        <input type="password" name="email" id="" class="field shadow" required>
+                        <input type="password" name="password" id="" class="field shadow" required>
                         <small class="label">Password</small>
                     </div>
                     <div class="btn-gp mt-3 mb-3">

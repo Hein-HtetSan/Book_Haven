@@ -17,6 +17,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
+<style>
+    .table-wrapper{
+        border: 2px solid var(--placeholder);
+    }
+    .user-card{
+        border: 2px solid var(--placeholder);
+        background-color: #fff;
+    }
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -45,7 +54,7 @@
                         <a href="./order.php" class="d-flex span text-decoration-none"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2"> Order </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href='./message.html' class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
+                        <a href='./message.php' class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
                     </div>
                 </div>
             </div>
@@ -66,7 +75,7 @@
 
                 <?php
                 
-                    $sql1 = "SELECT count(email) AS user_count FROM user";
+                    $sql1 = "SELECT count(email) AS user_count FROM user WHERE NOT id=81374";
                     $query1 = mysqli_query($con, $sql1);
                     $row1 = mysqli_fetch_assoc($query1);
                     $user_count = $row1['user_count'];
@@ -123,7 +132,7 @@
                                     <th>Phone</th>
                                 </tr>
                                 <?php
-                                    $sql4 = "SELECT * FROM user";
+                                    $sql4 = "SELECT * FROM user WHERE NOT id=81374";
                                     $query4 = mysqli_query($con, $sql4);
                                     $count=1;
                                     while($row = mysqli_fetch_assoc($query4)):
@@ -149,5 +158,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelector(".view-btn").addEventListener("click", () => {
+            window.location = "../template/user_login.php";
+        })
+    </script>
 </body>
 </html>

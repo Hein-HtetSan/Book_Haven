@@ -101,7 +101,7 @@
                             $query2 = mysqli_query($con, $sql2);
                             if($query2){
                                 $_SESSION['id'] = $user_id;
-                                header("location:./shop.php");
+                                header("location:./profile.php");
                             }
                         }else{
                             $err = "d-block";

@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-12 details-wrapper">
                 <div class="details shadow d-flex flex-column align-items-start justify-content-center px-3 py-4">
-                    <h2 class="mb-4">Your Order</h2>
+                    <h2 class="mb-4">Order Detail</h2>
                     <div class="table-wrapper mb-3">
                         <table>
                             <tr>

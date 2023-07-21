@@ -1,3 +1,11 @@
+
+<?php
+    
+    session_start();
+    include_once("../php/config.php");
+    $user_id = $_SESSION['usr_id'];
+        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +33,7 @@
                 <?php
                 
                     include_once("../php/config.php");
-                    session_start();
-                    $user_id = $_GET['id'];
+                    
 
                     $sql = "SELECT * FROM user WHERE id = $user_id";
                     $query = mysqli_query($con, $sql);

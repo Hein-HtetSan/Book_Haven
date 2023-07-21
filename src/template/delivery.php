@@ -43,7 +43,7 @@
             <?php
             
                 $status = "d-none";
-                $sql1 = "SELECT DISTINCT order_code, order_date, arrive_date FROM order_details WHERE status='unconfirm'";
+                $sql1 = "SELECT DISTINCT order_code, order_date, arrive_date FROM order_details WHERE status='unconfirm' AND userid=$user_id";
                 $query1 = mysqli_query($con, $sql1);
                 if(mysqli_num_rows($query1) != 0){
                     $status = "d-none";

@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Haven | Dashboard | Order</title>
-    <link rel="stylesheet" href="../assets/css/overview.css">
+    <title>Book Haven | Dashboard | Message</title>
+    <link rel="stylesheet" href="../assets/css/message.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
+<style>
+    .message-box{
+    border: 2px solid var(--placeholder);
+    }
+    h5{
+        color: var(--azul);
+    }
+    h5 span{
+    font-family: var(--Gochi);
+    color: #777;
+    }
+    p{
+        font-family: var(--Gochi);
+        font-size: 18px;
+        color: #333;
+        /* text-indent: 1.5rem; */
+        letter-spacing: 1px;
+    }
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -34,10 +53,10 @@
                         <a href="./book.php" class="text-decoration-none d-flex span"><i class="bi bi-journal-bookmark me-2"></i> <span class="d-none d-md-block span2 "> Book </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href="./order.php" class="active d-flex span text-decoration-none"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2 active"> Order </span></a>
+                        <a href="./order.php" class=" d-flex span text-decoration-none"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2 "> Order </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href="./message.html" class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
+                        <a href="./message.php" class="active d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2 active"> Message </span></a>
                     </div>
                 </div>
             </div>
@@ -48,47 +67,36 @@
                 <div class="row mt-3 mb-3">
                     <div class="col-12 d-flex px-5 align-items-center justify-content-between border-bottom py-2 main-navbar">
                         <div class="d-flex">
-                            <i class="bi bi-card-checklist me-2"></i> Order
+                            <i class="bi bi-envelope me-2"></i> Message
                         </div>
                     </div>
                 </div>
 
 
                 <div class="row">
-                    <div class="col-12 d-flex align-items-center justify-content-center px-4 py-2">
-                        <div class="table-wrapper shadow">
-                            <table class="">
-                                <tr class="">
-                                    <th>No.</th>
-                                    <th>Order ID</th>
-                                    <th>Name</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Order Detail</th>
-                                    <th>Action</th>
-                                </tr>
-                                
-                                <tr>
-                                    <td>1.</td>
-                                    <td>#11111</td>
-                                    <td>Mg Mg</td>
-                                    <td>Yangon</td>
-                                    <td>097894654</td>
-                                    <td>
-                                        <a href="" class="btn btn-sm btn-warning"><i class="bi bi-exclamation-circle-fill"></i> Details</a>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center justify-content-center fs-5">
-                                            <a href="" class="me-3 btn btn-sm btn-primary border border-rounded"><i class="bi bi-check-all"></i> Confirm</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                
-    
-                            </table>
+
+                    <?php
+                        include("../php/config.php");
+                        $sql = "SELECT * FROM message";
+                        $query = mysqli_query($con, $sql);
+                        while($row = mysqli_fetch_assoc($query)):
+                            $name = $row['user_name'];
+                            $email = $row['email'];
+                            $message = $row['msg'];
+                    ?>
+
+                    <div class="col-12 col-md-6 col-lg-4 d-flex align-items-start justify-content-start px-4 py-2">
+                        <!-- message goes here  -->
+                        <div class=" message-box d-flex flex-column align-items-start shadow justify-content-start p-3">
+                            <h5><i class="bi bi-person-fill me-2"></i> <span><?php echo $name;?></span></h5>
+                            <h5><i class="bi bi-envelope-fill me-2"></i> <span><?php echo $email;?></span></h5>
+                            <p class=""><?php echo $message;?></p>            
                         </div>
+                        <!-- message end here  -->
                     </div>
+                    <?php endwhile;?>
                 </div>
+            </div>
 
             </div>
         </div>

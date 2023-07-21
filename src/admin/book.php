@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
+<style>
+    .table-wrapper{
+        border: 2px solid var(--placeholder);
+    }
+</style>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -41,7 +46,7 @@
                         <a href="./order.php" class="text-decoration-none d-flex span"><i class="bi bi-card-checklist me-2"></i> <span class="d-none d-md-block span2"> Order </span></a>
                     </div>
                     <div class="d-flex mb-md-3 me-5 me-md-0">
-                        <a href="./message.html" class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
+                        <a href="./message.php" class="d-flex span text-decoration-none"><i class="bi bi-envelope me-2"></i> <span class="d-none d-md-block span2"> Message </span></a>
                     </div>
                 </div>
             </div>
