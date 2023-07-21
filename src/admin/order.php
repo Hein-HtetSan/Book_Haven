@@ -71,16 +71,27 @@
                                 <?php
 
                                     include("../php/config.php");
-                                    $sql = "SELECT DISTINCT order_code, order_address, fname, lname, phone FROM order_details
-                                            LEFT JOIN user ON order_details.userid=user.id";
+                                    $sql = "SELECT DISTINCT order_code, userid, order_address, fname, lname, phone, status FROM order_details
+                                            LEFT JOIN user ON order_details.userid=user.id ORDER BY status";
                                     $query = mysqli_query($con, $sql);
                                     $count = 0;
+                                    $textColor = "btn-info";
+                                    $control = "enabled";
                                     while($row = mysqli_fetch_assoc($query)):
                                         $count++;
                                         $order_code = $row['order_code'];
                                         $name = $row['fname']."".$row['lname'];
                                         $address = $row['order_address'];
                                         $phone = $row['phone'];
+                                        $status = $row['status'];
+                                        $user_id = $row['userid'];
+                                        if($status == "confirm"){
+                                            $control = "disabled";
+                                            $textColor = "btn-success";
+                                        }else{
+                                            $control = "enabled";
+                                            $textColor = "btn-info";
+                                        }
                                 ?>
                                 
                                     <tr>
@@ -90,11 +101,11 @@
                                         <td><?php echo $address;?></td>
                                         <td><?php echo $phone;?></td>
                                         <td>
-                                            <a href="" class="btn btn-sm btn-warning"><i class="bi bi-exclamation-circle-fill"></i> Details</a>
+                                            <a href="./order_detail.php?order_id=<?php echo $order_code;?>&user_id=<?php echo $user_id;?>" class="btn btn-sm btn-warning"><i class="bi bi-exclamation-circle-fill"></i> Details</a>
                                         </td>
                                         <td>
                                             <div class="d-flex align-items-center justify-content-center fs-5">
-                                                <a href="" class="me-3 btn btn-sm btn-primary border border-rounded"><i class="bi bi-check-all"></i> Confirm</a>
+                                                <a href="../php/confirm_order.php?order_id=<?php echo $order_code;?>" class="me-3 btn btn-sm <?php echo $textColor;?> border border-rounded <?php echo $control;?>"><i class="bi bi-check-all"></i> Confirm</a>
                                             </div>
                                         </td>
                                     </tr>

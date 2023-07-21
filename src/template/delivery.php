@@ -43,7 +43,7 @@
             <?php
             
                 $status = "d-none";
-                $sql1 = "SELECT DISTINCT order_code, order_date, arrive_date FROM order_details";
+                $sql1 = "SELECT DISTINCT order_code, order_date, arrive_date FROM order_details WHERE status='unconfirm'";
                 $query1 = mysqli_query($con, $sql1);
                 if(mysqli_num_rows($query1) != 0){
                     $status = "d-none";
@@ -56,7 +56,7 @@
             ?>
 
                 <!-- item  -->
-                <div class="itembox col-12 col-md-4 col-lg-3 d-flex align-items-center justify-content-center px-3 py-2 mb-3">
+                <div class="itembox col-12 col-md-4 col-lg-3 d-flex align-items-start justify-content-center px-3 py-2 mb-3">
                     <div class="itembox-wrapper shadow  d-flex align-items-center justify-content-between px-3 py-2 mb-3">
                         <!-- image  -->
                         <i class="bi bi-box me-3"></i>
@@ -86,14 +86,6 @@
                 <div class="status <?php echo $status;?>">
                     <p>No Order<br>Please Order Something!<br>Don't be window shopping buddy!</p>
                 </div>
-
-
-                <div class="mb-5"></div>
-                <div class="mb-5"></div>
-                <div class="mb-5"></div>
-                <div class="mb-5"></div>
-                <div class="mb-5"></div>
-                <div class="mb-5"></div>
 
             </div>
         </div>

@@ -24,7 +24,8 @@
                 $dateObj->modify('+2 days');
 
                 // Format the updated date as a string
-                $updatedDate = $dateObj->format('Y/m/d'); 
+                $updatedDate = $dateObj->format('Y/m/d');
+                $status = "unconfirm"; 
                 while($row = mysqli_fetch_assoc($query)){
                     $userid = $row['user_id'];
                     $book = $row['title'];
@@ -32,8 +33,8 @@
                     $category = $row['catid'];
                     $total = $row['total'];
                     $sql2 = "INSERT INTO order_details
-                    (order_code, userid, order_count, order_categ, order_address, order_total, order_books, order_date, arrive_date)
-                    VALUES ($order_code, $userid, $count, $category, '$address', $total, '$book', '$currentDate', '$updatedDate')";
+                    (order_code, userid, order_count, order_categ, order_address, order_total, order_books, order_date, arrive_date, status)
+                    VALUES ($order_code, $userid, $count, $category, '$address', $total, '$book', '$currentDate', '$updatedDate', '$status')";
                     $query2 = mysqli_query($con, $sql2);
                 }
                 if($query2){

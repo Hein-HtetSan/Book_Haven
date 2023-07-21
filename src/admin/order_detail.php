@@ -1,9 +1,8 @@
 <?php
 
-    session_start();
     include("../php/config.php");
-    $user_id = $_SESSION['usr_id'];
     $code = $_GET['order_id'];
+    $user_id = $_GET['user_id'];
 
 ?>
 
@@ -109,7 +108,7 @@
                             </tr>
                             <?php
 
-                                $sql = "SELECT * FROM order_details WHERE order_code = $code";
+                                $sql = "SELECT * FROM order_details WHERE order_code = $code AND userid=$user_id";
                                 $query = mysqli_query($con, $sql);
                                 while($row = mysqli_fetch_assoc($query)):
                                     $title = $row['order_books'];
@@ -127,7 +126,7 @@
                         </table>
                     </div>
                     <div class="d-flex align-items-end justify-content-end w-100 px-3">
-                        <a href="./delivery.php" class="okay">Okay</a>
+                        <a href="./order.php" class="okay">Okay</a>
                     </div>
                 </div>
             </div>
