@@ -10,10 +10,10 @@
         $row = mysqli_fetch_assoc($query);
         $item_count = $row['counts'] + 1;
         $update = mysqli_query($con, "UPDATE cart LEFT JOIN book
-                                    ON book.id=cart.bookid SET counts = $item_count, total = book.prices*cart.counts WHERE bookid = $id");
+                                    ON book.id=cart.bookid SET counts = $item_count, total = book.prices*cart.counts 
+                                    WHERE bookid = $id");
         if($update){
             header("location: ../template/cart.php");
         }
     }
-
 ?>
