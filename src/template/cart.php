@@ -73,6 +73,7 @@
                             }else{
                                 $text = "text-secondary";
                             }
+                            (strlen($title) > 28) ? $title = substr($title, 0, 10).'...' : $title = $title;
                             // $count = $row2['count'];
 
                             echo "

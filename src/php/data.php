@@ -17,6 +17,8 @@
         $heart_fill = "d-none";
         $cart = "d-block";
 
+        (strlen($title) > 28) ? $title = substr($title, 0, 10).'...' : $title = $title;
+
         $sql2 = "SELECT * FROM wishlist WHERE book_id= $id AND user_id=$user_id";
         $query2 = mysqli_query($con, $sql2);
 
