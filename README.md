@@ -9,7 +9,7 @@ Book Haven, online bookshop was successfully created on 7-22-23. It was my great
 - you can collect books what you like.
 - you can also manage your personal information.
 
-## Table of Content
+## Table of Content (How files are structured)
 So, let's seek my project structure
 ```markdown
 ├── src
