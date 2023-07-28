@@ -1,5 +1,5 @@
 <?php
-
+    // cancelling the order 
     include("./config.php");
     $order_code = $_GET['order_id'];
 
