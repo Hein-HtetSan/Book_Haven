@@ -1,5 +1,6 @@
 <?php
 
+    // search by category 
     session_start();
     include_once("config.php");
     $user_id = $_SESSION['usr_id'];
