@@ -1,5 +1,6 @@
 <?php
 
+    // decreasing the counts from cart 
     include_once("config.php");
     echo "Hello from add";
     $id = $_GET['id'];
