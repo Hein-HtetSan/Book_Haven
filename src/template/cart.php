@@ -26,6 +26,7 @@
 </style>
 <body>
     
+    <!-- container-wrapper  -->
     <div class="container-fluid">
         <div class="row">
 
@@ -106,8 +107,6 @@
                     }else{
                         $status = "d-block";
                     }
-                
-                
                 ?>
 
                     <!-- item  -->
