@@ -94,6 +94,7 @@
 </style>
 <body>
     
+    <!-- order details  -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 details-wrapper">
