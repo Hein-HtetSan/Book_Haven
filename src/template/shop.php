@@ -19,6 +19,8 @@
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
 <body>
+
+    <!-- shop  -->
     <div class="container-fluid position-relative">
 
         <!-- category modal  -->
