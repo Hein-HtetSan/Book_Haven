@@ -1,5 +1,6 @@
 <?php
 
+    // searching the items 
     session_start();
     include_once("config.php");
     $user_id = $_SESSION['usr_id'];
