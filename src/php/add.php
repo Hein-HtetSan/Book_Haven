@@ -1,5 +1,5 @@
 <?php
-
+    // increasing the count
     include_once("config.php");
     // echo "Hello from add";
     $id = $_GET['id'];
