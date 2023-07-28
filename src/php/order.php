@@ -1,5 +1,6 @@
 <?php
 
+    // adding to order
     include("config.php");
     $cart_id = $_GET['cart_id'];
     $price = $_GET['price'];
