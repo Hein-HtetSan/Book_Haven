@@ -1,5 +1,6 @@
 <?php
 
+    // confirming the order
     include("config.php");
     $order_code = $_GET['order_id'];
     echo $order_code;
