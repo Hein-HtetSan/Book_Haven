@@ -2,6 +2,8 @@
 
 
 <?php
+
+    // items 
     session_start();
     include("config.php");
     $user_id = $_SESSION['usr_id'];
