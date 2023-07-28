@@ -1,5 +1,6 @@
 <?php
 
+    // wishlist for wishlist page 
     include_once("config.php");
     $book_id = $_GET['id'];
     $user_id = $_GET['usr_id'];
