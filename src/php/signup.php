@@ -1,5 +1,6 @@
 <?php
 
+    // user sign up backend 
     session_start();
     include("config.php");
 
