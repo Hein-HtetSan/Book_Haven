@@ -2,6 +2,7 @@
 
 <?php
 
+    // data
     include_once("config.php");
     $user_id = $_SESSION['usr_id'];
     $is_include_in_wishlist = false;
