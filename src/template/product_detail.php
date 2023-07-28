@@ -10,6 +10,8 @@
     <link rel="icon" href="../icons/svg/logo.svg">
 </head>
 <body>
+
+    <!-- product details  -->
     <div class="container-fluid">
         <div class="row">
 
