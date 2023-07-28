@@ -1,5 +1,6 @@
 <?php
 
+    // cart for cart page 
     include_once("config.php");
     $book_id = $_GET['id'];
     $cart_id = $_GET['cart_id'];
