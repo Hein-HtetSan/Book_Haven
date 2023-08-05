@@ -9,7 +9,7 @@
     $output = "";
     $sql = mysqli_query($con, "SELECT * FROM book 
                                 LEFT JOIN category ON book.catid = category.cat_id
-                                WHERE title='$searchTerm' OR Author='$searchTerm' OR catname='$searchTerm' 
+                                WHERE title LIKE '%$searchTerm%' OR Author LIKE '%$searchTerm%' OR catname LIKE '%$searchTerm%' 
                                 ");
 
 #LEFT JOIN wishlist ON book.id = wishlist.book_id 
