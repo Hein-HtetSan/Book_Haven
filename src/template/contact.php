@@ -73,26 +73,53 @@
 
 
                 <form action="" method="post" class="d-flex align-items-center justify-content-center flex-column">
-                    <input type="text" name="name" placeholder="Username" class="mb-3 shadow" required>
-                    <input type="Email" name="email" placeholder="Email" class="mb-3 shadow" required>
-                    <textarea name="msg" id="" cols="30" rows="10" placeholder="Type your message" class="shadow mb-3" required></textarea>
+                    <input type="text" name="name" placeholder="Username" class="mb-3 shadow name" required>
+                    <input type="Email" name="email" placeholder="Email" class="mb-3 shadow email" required>
+                    <textarea name="msg" id="" cols="30" rows="10" placeholder="Type your message" class="shadow mb-3 message" required></textarea>
                     <div class="btn-gp d-flex align-items-center justify-content-between">
                         <a href="../index.html">Back</a>
                         <button class="submit" name="submit">Submit</button>
                     </div>
                 </form>
-                <small class="response shadow text-success <?php echo $err;?>"><?php echo $status;?></small>
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        const response = document.querySelector(".response");
-        setInterval(() => {
-            if(response.classList.contains("active")){
-                response.classList.remove("active");
-                console.log("removed")
+        // const response = document.querySelector(".response");
+        // setInterval(() => {
+        //     if(response.classList.contains("active")){
+        //         response.classList.remove("active");
+        //         console.log("removed")
+        //     }
+        // }, 800);
+        $(document).ready(function(){
+            $name = $(".name").value;
+            $email = $(".email").value;
+            $message = $(".message").value;
+            if($name && $email && $message){
+                $(".submit").click(function() {
+                    Swal.fire(
+                        'Good job!',
+                        'Message sent successfully!',
+                        'success'
+                    );
+                });
+            }else{
+                $(".submit").click(function() {
+                    Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Please Fill the fields!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                    });
+                });
+                
             }
-        }, 800);
+            
+        });
+        
     </script>
 </body>
 </html>
